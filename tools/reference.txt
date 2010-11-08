@@ -1,0 +1,2 @@
+http://directshownet.sourceforge.net/
+lgpl
