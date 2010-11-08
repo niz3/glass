@@ -1,0 +1,9 @@
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\obj\x86\Debug\nykamera.MainForm.resources
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\bin\Debug\nykamera.exe
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\bin\Debug\nykamera.pdb
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\bin\Debug\DirectShowLib-2005.dll
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\obj\x86\Debug\nykamera.exe
+C:\Users\Axel\Documents\SharpDevelop Projects\nykamera\nykamera\obj\x86\Debug\nykamera.pdb
