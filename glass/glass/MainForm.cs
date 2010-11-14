@@ -7,27 +7,34 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-using System.Collections.Generic;
 using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Drawing.Imaging;
+using System.Diagnostics;
 
 namespace glass
 {
 	/// <summary>
 	/// Description of MainForm.
 	/// </summary>
-	public partial class MainForm : Form
-	{
-		public MainForm()
-		{
+	public partial class MainForm : Form {
+		private System.ComponentModel.Container components = null;
+		public MainForm() {
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
 			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
+		}
+		
+		
+		void MainFormLoad(object sender, EventArgs e){
+			Form frmLogin = new LoginForm();
+			frmLogin.ShowDialog(this);
+			Application.Exit();
 		}
 	}
 }
