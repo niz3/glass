@@ -3,17 +3,18 @@
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using glass.config;
 
 #endregion
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("glass")]
+[assembly: AssemblyTitle(app.name)]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("glass")]
+[assembly: AssemblyProduct(app.name)]
 [assembly: AssemblyCopyright("Copyright 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

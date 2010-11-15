@@ -23,26 +23,40 @@ namespace glass {
 			pct.MouseLeave+=new EventHandler(LeaveClickable);
 			pct.Click+=new EventHandler(AddUser);
 			pct.TabIndex=0;
-			Config.UserFaces.Add(pct);
+			Config.UserFaces.Insert(0,pct);
+			foreach (UserList user in Config.Users) {
+				pct=new PictureBox();
+				pct.Image=user.picture;
+				pct.Dock=DockStyle.Fill;
+				pct.SizeMode=PictureBoxSizeMode.StretchImage;
+				pct.MouseEnter+=new EventHandler(EnterClickable);
+				pct.MouseLeave+=new EventHandler(LeaveClickable);
+				pct.Click+=new EventHandler(ClickFace);
+				pct.TabIndex=Config.UserFaces.Count;
+				Config.UserFaces.Add(pct);
+			}
 			DrawLogin();
 		}
 		void AddUser(object sender, EventArgs e) {
 			Dialog.WebcamDialog frmWebcam=new Dialog.WebcamDialog();
 			Cursor=Cursors.WaitCursor;
 			frmWebcam.ShowDialog(this);
-			UserList temp = new UserList();
-			temp.id=Config.Users.Count;temp.picture=frmWebcam.b;temp.score=0;temp.difficulty=Difficulty.hard;
-			Config.Users.Add(temp);
-			PictureBox pct=new PictureBox();
-			pct.Image=temp.picture;
-			pct.Dock=DockStyle.Fill;
-			pct.SizeMode=PictureBoxSizeMode.StretchImage;
-			pct.MouseEnter+=new EventHandler(EnterClickable);
-			pct.MouseLeave+=new EventHandler(LeaveClickable);
-			pct.Click+=new EventHandler(ClickFace);
-			pct.TabIndex=Config.UserFaces.Count;
-			Config.UserFaces.Add(pct);
-			DrawLogin();
+			if(frmWebcam.b!=null) {
+				UserList temp = new UserList();
+				temp.id=Config.Users.Count;temp.picture=frmWebcam.b;temp.score=0;temp.difficulty=Difficulty.easy;
+				Config.Users.Add(temp);
+				PictureBox pct=new PictureBox();
+				pct.Image=temp.picture;
+				pct.Dock=DockStyle.Fill;
+				pct.SizeMode=PictureBoxSizeMode.StretchImage;
+				pct.MouseEnter+=new EventHandler(EnterClickable);
+				pct.MouseLeave+=new EventHandler(LeaveClickable);
+				pct.Click+=new EventHandler(ClickFace);
+				pct.TabIndex=Config.UserFaces.Count;
+				Config.UserFaces.Add(pct);
+				DrawLogin();
+				Config.SaveUser(temp.id);
+			}
 		}
 		
 		//function to draw profile pictures based on scroll value

@@ -41,8 +41,8 @@ namespace glass.Dialog
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 2;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(640, 480);
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(640, 550);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// pctCam
@@ -54,7 +54,7 @@ namespace glass.Dialog
 			this.pctCam.InitialImage = null;
 			this.pctCam.Location = new System.Drawing.Point(3, 3);
 			this.pctCam.Name = "pctCam";
-			this.pctCam.Size = new System.Drawing.Size(634, 442);
+			this.pctCam.Size = new System.Drawing.Size(634, 474);
 			this.pctCam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.pctCam.TabIndex = 1;
 			this.pctCam.TabStop = false;
@@ -63,11 +63,11 @@ namespace glass.Dialog
 			// 
 			this.btnSnap.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.btnSnap.Enabled = false;
-			this.btnSnap.Location = new System.Drawing.Point(3, 451);
+			this.btnSnap.Image = global::glass.Resources.camera;
+			this.btnSnap.Location = new System.Drawing.Point(3, 483);
 			this.btnSnap.Name = "btnSnap";
-			this.btnSnap.Size = new System.Drawing.Size(634, 26);
+			this.btnSnap.Size = new System.Drawing.Size(634, 64);
 			this.btnSnap.TabIndex = 2;
-			this.btnSnap.Text = "Ta Kort";
 			this.btnSnap.UseVisualStyleBackColor = true;
 			this.btnSnap.Click += new System.EventHandler(this.BtnSnapClick);
 			// 
@@ -75,7 +75,7 @@ namespace glass.Dialog
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(640, 480);
+			this.ClientSize = new System.Drawing.Size(640, 550);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "WebcamDialog";

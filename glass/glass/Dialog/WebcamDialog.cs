@@ -17,7 +17,7 @@ using System.Diagnostics;
 
 namespace glass.Dialog {
 	public partial class WebcamDialog : Form{
-		public Bitmap b;
+		public Bitmap b=null;
 		private System.ComponentModel.Container components = null;
 		private Capture cam;
 		IntPtr m_ip = IntPtr.Zero;
