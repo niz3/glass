@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
     <Compile Include="Dialog\Capture.cs" />
     <Compile Include="Dialog\WebcamDialog.cs" />
     <Compile Include="Dialog\WebcamDialog.Designer.cs">

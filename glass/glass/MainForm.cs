@@ -14,12 +14,9 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
 using System.Diagnostics;
+using glass.config;
 
-namespace glass
-{
-	/// <summary>
-	/// Description of MainForm.
-	/// </summary>
+namespace glass {
 	public partial class MainForm : Form {
 		private System.ComponentModel.Container components = null;
 		public MainForm() {
@@ -27,7 +24,6 @@ namespace glass
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
 		}
 		
 		
