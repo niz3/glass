@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="glass/Program.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="nykamera/Program.cs" ctype="Workbench">
     <Files>
-      <File FileName="glass/MainForm.cs" Line="1" Column="1" />
-      <File FileName="glass/MainForm.Designer.cs" Line="29" Column="18" />
-      <File FileName="glass/Program.cs" Line="1" Column="1" />
+      <File FileName="nykamera/MainForm.Designer.cs" Line="24" Column="43" />
+      <File FileName="nykamera/MainForm.cs" Line="1" Column="1" />
+      <File FileName="nykamera/Program.cs" Line="26" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

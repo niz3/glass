@@ -30,7 +30,7 @@ namespace nykamera {
 			InitializeComponent();
 			
 			
-			cam=new Capture(0,320,240,24,pictureBox1);
+			cam=new Capture(0,640,480,24,pictureBox1);
 		}
 		
 		protected override void Dispose( bool disposing ) {
