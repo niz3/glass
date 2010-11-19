@@ -39,8 +39,10 @@ namespace glass
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pctUp = new System.Windows.Forms.PictureBox();
 			this.pctDown = new System.Windows.Forms.PictureBox();
+			this.picExit = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pctUp)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctDown)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -68,8 +70,6 @@ namespace glass
 			this.pctUp.TabIndex = 2;
 			this.pctUp.TabStop = false;
 			this.pctUp.Click += new System.EventHandler(this.PctUpClick);
-			this.pctUp.MouseEnter += new System.EventHandler(this.EnterClickable);
-			this.pctUp.MouseLeave += new System.EventHandler(this.LeaveClickable);
 			// 
 			// pctDown
 			// 
@@ -80,8 +80,17 @@ namespace glass
 			this.pctDown.TabIndex = 3;
 			this.pctDown.TabStop = false;
 			this.pctDown.Click += new System.EventHandler(this.PctDownClick);
-			this.pctDown.MouseEnter += new System.EventHandler(this.EnterClickable);
-			this.pctDown.MouseLeave += new System.EventHandler(this.LeaveClickable);
+			// 
+			// picExit
+			// 
+			this.picExit.Image = global::glass.Resources.exit;
+			this.picExit.Location = new System.Drawing.Point(12, 547);
+			this.picExit.Name = "picExit";
+			this.picExit.Size = new System.Drawing.Size(100, 50);
+			this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.picExit.TabIndex = 4;
+			this.picExit.TabStop = false;
+			this.picExit.Click += new System.EventHandler(this.PicExitClick);
 			// 
 			// LoginForm
 			// 
@@ -89,6 +98,7 @@ namespace glass
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Blue;
 			this.ClientSize = new System.Drawing.Size(800, 600);
+			this.Controls.Add(this.picExit);
 			this.Controls.Add(this.pctDown);
 			this.Controls.Add(this.pctUp);
 			this.Controls.Add(this.tableLayoutPanel1);
@@ -100,8 +110,10 @@ namespace glass
 			this.TopMost = true;
 			((System.ComponentModel.ISupportInitialize)(this.pctUp)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctDown)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.PictureBox picExit;
 		private System.Windows.Forms.PictureBox pctDown;
 		private System.Windows.Forms.PictureBox pctUp;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

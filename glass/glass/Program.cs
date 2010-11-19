@@ -23,7 +23,7 @@ namespace glass {
 		private static void Main(string[] args) {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			Application.Run(new glass.Screens.GamePrepositions());
 		}
 		
 	}

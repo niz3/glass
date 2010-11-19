@@ -18,3 +18,5 @@ C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Resources.reso
 C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.LoginForm.resources
 C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Dialog.WebcamDialog.resources
 C:\Users\Axel\Projekt\glass\glass\glass\glass\bin\Debug\DirectShowLib-2005.dll
+C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Screens.MainMenu.resources
+C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Screens.GamePrepositions.resources
