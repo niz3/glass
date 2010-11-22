@@ -24,6 +24,7 @@ namespace glass.Screens
 			//
 			InitializeComponent();
 			
+			Hej
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
