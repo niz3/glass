@@ -51,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dialog\Capture.cs" />
-    <Compile Include="Dialog\WebcamDialog.cs" />
+    <Compile Include="Dialog\WebcamDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialog\WebcamDialog.Designer.cs">
       <DependentUpon>WebcamDialog.cs</DependentUpon>
     </Compile>
@@ -61,7 +63,15 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\LoginForm.cs" />
+    <Compile Include="Screens\Klader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Klader.Designer.cs">
+      <DependentUpon>Klader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Screens\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
@@ -78,6 +88,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Klader.resx">
+      <DependentUpon>Klader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,9 +98,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dialog" />
-    <Folder Include="Screens" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
