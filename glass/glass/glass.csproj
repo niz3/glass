@@ -77,13 +77,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\GameFruits.cs" />
+    <Compile Include="Screens\GameFruits.Designer.cs">
+      <DependentUpon>GameFruits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GamePrepositions.cs" />
     <Compile Include="Screens\GamePrepositions.Designer.cs">
       <DependentUpon>GamePrepositions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\LoginForm.cs" />
-    <Compile Include="Screens\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,9 +104,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\GamePrepositions.resx">
       <DependentUpon>GamePrepositions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
