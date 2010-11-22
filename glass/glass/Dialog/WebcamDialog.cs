@@ -14,10 +14,12 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
 using System.Diagnostics;
+using glass.config;
+using glass.framework;
 
 namespace glass.Dialog {
 	public partial class WebcamDialog : Form{
-		public Bitmap b;
+		public Bitmap b=null;
 		private System.ComponentModel.Container components = null;
 		private Capture cam;
 		IntPtr m_ip = IntPtr.Zero;
@@ -50,7 +52,7 @@ namespace glass.Dialog {
             }
 		}
 		void WebcamDialogShown(object sender, EventArgs e) {
-			cam=new Capture(0,640,480,24,pctCam);
+			cam=new Capture(WebCam.id,WebCam.width,WebCam.height,WebCam.bpp,pctCam);
 			pctCam.Image=null;
 			pctCam.SizeMode= PictureBoxSizeMode.StretchImage;
 			btnSnap.Enabled=true;

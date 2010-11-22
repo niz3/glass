@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using glass.config;
+using glass.framework;
 
 namespace glass {
 	public partial class LoginForm : Form {
@@ -15,34 +16,52 @@ namespace glass {
 		public LoginForm() {
 			InitializeComponent();
 			
+			this.pctUp.MouseEnter += new System.EventHandler(Framework.EnterClickable);
+			this.pctUp.MouseLeave += new System.EventHandler(Framework.LeaveClickable);
+			this.pctDown.MouseEnter += new System.EventHandler(Framework.EnterClickable);
+			this.pctDown.MouseLeave += new System.EventHandler(Framework.LeaveClickable);
+			this.picExit.MouseEnter += new System.EventHandler(Framework.EnterClickable);
+			this.picExit.MouseLeave += new System.EventHandler(Framework.LeaveClickable);
+			
+			
 			PictureBox pct=new PictureBox();
 			pct.Image=Resources.new_user;
 			pct.SizeMode=PictureBoxSizeMode.StretchImage;
 			pct.Dock=DockStyle.Fill;
-			pct.MouseEnter+=new EventHandler(EnterClickable);
-			pct.MouseLeave+=new EventHandler(LeaveClickable);
+			pct.MouseEnter+=new EventHandler(Framework.EnterClickable);
+			pct.MouseLeave+=new EventHandler(Framework.LeaveClickable);
 			pct.Click+=new EventHandler(AddUser);
 			pct.TabIndex=0;
-			Config.UserFaces.Add(pct);
+			Config.UserFaces.Insert(0,pct);
+			foreach (UserList user in Config.Users) {
+				pct=new PictureBox();
+				pct.Image=user.picture;
+				pct.Dock=DockStyle.Fill;
+				pct.SizeMode=PictureBoxSizeMode.StretchImage;
+				pct.MouseEnter+=new EventHandler(Framework.EnterClickable);
+				pct.MouseLeave+=new EventHandler(Framework.LeaveClickable);
+				pct.Click+=new EventHandler(ClickFace);
+				pct.TabIndex=Config.UserFaces.Count;
+				Config.UserFaces.Add(pct);
+			}
 			DrawLogin();
 		}
 		void AddUser(object sender, EventArgs e) {
 			Dialog.WebcamDialog frmWebcam=new Dialog.WebcamDialog();
-			Cursor=Cursors.WaitCursor;
 			frmWebcam.ShowDialog(this);
-			UserList temp = new UserList();
-			temp.id=Config.Users.Count;temp.picture=frmWebcam.b;temp.score=0;temp.difficulty=Difficulty.hard;
-			Config.Users.Add(temp);
-			PictureBox pct=new PictureBox();
-			pct.Image=temp.picture;
-			pct.Dock=DockStyle.Fill;
-			pct.SizeMode=PictureBoxSizeMode.StretchImage;
-			pct.MouseEnter+=new EventHandler(EnterClickable);
-			pct.MouseLeave+=new EventHandler(LeaveClickable);
-			pct.Click+=new EventHandler(ClickFace);
-			pct.TabIndex=Config.UserFaces.Count;
-			Config.UserFaces.Add(pct);
-			DrawLogin();
+			if(frmWebcam.b!=null) {
+				Framework.AddUser("",frmWebcam.b, Difficulty.easy,0);
+				PictureBox pct=new PictureBox();
+				pct.Image=frmWebcam.b;
+				pct.Dock=DockStyle.Fill;
+				pct.SizeMode=PictureBoxSizeMode.StretchImage;
+				pct.MouseEnter+=new EventHandler(Framework.EnterClickable);
+				pct.MouseLeave+=new EventHandler(Framework.LeaveClickable);
+				pct.Click+=new EventHandler(ClickFace);
+				pct.TabIndex=Config.UserFaces.Count;
+				Config.UserFaces.Add(pct);
+				DrawLogin();
+			}
 		}
 		
 		//function to draw profile pictures based on scroll value
@@ -53,14 +72,6 @@ namespace glass {
 				tableLayoutPanel1.Controls.Add(Config.UserFaces[scroll+i]);
 			}
 		}
-		
-		//functions to highlight clickable objects by changing cursor
-		public void EnterClickable(object sender, EventArgs e){
-			Cursor=Cursors.Hand;
-		}
-		public void LeaveClickable(object sender, EventArgs e) {
-			Cursor=Cursors.Default;
-		}	
 		
 		void PctUpClick(object sender, EventArgs e) {
 			if(scroll>0) {
@@ -74,9 +85,14 @@ namespace glass {
 				DrawLogin();
 			}
 		}
-		void ClickFace(object sender, EventArgs e) {
+		
+		public void ClickFace(object sender, EventArgs e) {
 			PictureBox pct=(PictureBox)sender;
 			MessageBox.Show(Config.Users[pct.TabIndex-1].id.ToString());
+		}
+		
+		public void PicExitClick(object sender, EventArgs e) {
+			Application.Exit();
 		}
 	}
 }

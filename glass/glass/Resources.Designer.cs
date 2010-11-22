@@ -67,6 +67,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap camera {
+			get {
+				object obj = ResourceManager.GetObject("camera", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap down {
 			get {
 				object obj = ResourceManager.GetObject("down", resourceCulture);
