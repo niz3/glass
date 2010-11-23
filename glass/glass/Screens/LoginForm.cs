@@ -23,6 +23,7 @@ namespace glass {
 			this.picExit.MouseEnter += new System.EventHandler(Framework.EnterClickable);
 			this.picExit.MouseLeave += new System.EventHandler(Framework.LeaveClickable);
 			
+			this.MouseWheel+= new MouseEventHandler(ScrollEvent);
 			
 			PictureBox pct=new PictureBox();
 			pct.Image=Resources.new_user;
@@ -50,7 +51,9 @@ namespace glass {
 			Dialog.WebcamDialog frmWebcam=new Dialog.WebcamDialog();
 			frmWebcam.ShowDialog(this);
 			if(frmWebcam.b!=null) {
-				Framework.AddUser("",frmWebcam.b, Difficulty.easy,0);
+				Dialog.DifficultyDialog frmDifficultyDialog=new glass.Dialog.DifficultyDialog();
+				frmDifficultyDialog.ShowDialog();
+				Framework.AddUser("",frmWebcam.b,frmDifficultyDialog.Difficulty ,0);
 				PictureBox pct=new PictureBox();
 				pct.Image=frmWebcam.b;
 				pct.Dock=DockStyle.Fill;
@@ -88,13 +91,22 @@ namespace glass {
 		
 		public void ClickFace(object sender, EventArgs e) {
 			PictureBox pct=(PictureBox)sender;
-			Config.LoggedInUser=Config.Users[pct.TabIndex-1].id;
+			Config.LoggedInUser=Config.Users[pct.TabIndex-1];
 			glass.Screens.MainMenuScreen frmMainMenu =new glass.Screens.MainMenuScreen();
 			frmMainMenu.Show(this);
 		}
 		
 		public void PicExitClick(object sender, EventArgs e) {
 			Application.Exit();
+		}
+		private void ScrollEvent(object sender, MouseEventArgs e) {
+			if((e.Delta>0)&&(scroll>0)) {
+				scroll-=3;
+				DrawLogin();
+			} else if((e.Delta<0)&&(Config.UserFaces.Count-scroll>9)) {
+				scroll+=3;
+				DrawLogin();
+			}
 		}
 	}
 }

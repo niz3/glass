@@ -48,7 +48,7 @@ namespace glass.Screens
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.Controls.Add(this.picPrepositions, 0, 0);
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 50);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
 			this.tableLayoutPanel1.RowCount = 3;
@@ -73,10 +73,10 @@ namespace glass.Screens
 			// picBack
 			// 
 			this.picBack.Image = global::glass.Resources.exit;
-			this.picBack.Location = new System.Drawing.Point(12, 556);
+			this.picBack.Location = new System.Drawing.Point(768, 0);
 			this.picBack.Name = "picBack";
 			this.picBack.Size = new System.Drawing.Size(32, 32);
-			this.picBack.TabIndex = 3;
+			this.picBack.TabIndex = 4;
 			this.picBack.TabStop = false;
 			this.picBack.Click += new System.EventHandler(this.PicBackClick);
 			// 

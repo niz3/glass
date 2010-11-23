@@ -65,6 +65,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog\DiffucultyDialog.cs" />
+    <Compile Include="Dialog\DiffucultyDialog.Designer.cs">
+      <DependentUpon>DiffucultyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\YesNoDialog.cs" />
+    <Compile Include="Dialog\YesNoDialog.Designer.cs">
+      <DependentUpon>YesNoDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Framework.cs" />
     <Compile Include="Dialog\Capture.cs" />
     <Compile Include="Dialog\WebcamDialog.cs" />
@@ -96,8 +104,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialog\DiffucultyDialog.resx">
+      <DependentUpon>DiffucultyDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\WebcamDialog.resx">
       <DependentUpon>WebcamDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\YesNoDialog.resx">
+      <DependentUpon>YesNoDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

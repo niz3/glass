@@ -23,6 +23,7 @@ namespace glass.framework {
 		private Rectangle bounds;
 		private Bitmap image;
 		private DrawArea parent;
+		private bool enabled=true;
 		#endregion
 		#region Properties
 		public DrawArea Parent {
@@ -36,6 +37,10 @@ namespace glass.framework {
 		public Rectangle Bounds {
 			get {return(bounds);}
 			set {bounds=value;}
+		}
+		public bool Enabled {
+			get {return(enabled);}
+			set {enabled=value;}
 		}
 		#endregion
 		#region Events
@@ -184,6 +189,13 @@ namespace glass.framework {
 	}
 
 	public static class Framework {
+		private static Random rnd=new Random(DateTime.Now.Millisecond);
+		public static int rndInt() {
+			return((int)rnd.Next());
+		}
+		public static int rndInt(int min, int max) {
+			return((int)rnd.Next(min, max));
+		}
 		public static void EnterClickable(object sender, EventArgs e){
 			Control sndr=(Control)sender;
 			sndr.Cursor=Cursors.Hand;
@@ -191,6 +203,12 @@ namespace glass.framework {
 		public static void LeaveClickable(object sender, EventArgs e) {
 			Control sndr=(Control)sender;
 			sndr.Cursor=Cursors.Default;
+		}
+		public static void EnterClickable(DrawableItems sender, EventArgs e){
+			sender.Parent.Cursor=Cursors.Hand;
+		}
+		public static void LeaveClickable(DrawableItems sender, EventArgs e) {
+			sender.Parent.Cursor=Cursors.Default;
 		}
 		
 		public static int AddUser(string name, Bitmap picture,Difficulty difficulty,int score) {
@@ -200,6 +218,32 @@ namespace glass.framework {
 			Config.SaveUser(temp.id);
 			return(temp.id);
 	    }
+		
+		//Function for checking if a point is inside a polygon, using the ray casting method.
+		public static bool PointInPolygon(Point p, Point[] poly) {
+			bool inside=false;
+			Point p1, p2;
+			//make sure the polygon has at least 3 vertecies
+			if(poly.Length<3) {
+				throw new ArgumentOutOfRangeException("poly","A polygon requires at least 3 vertecies");
+				//return(false);
+			}
+			Point oldPoint = new Point(poly[poly.Length - 1].X, poly[poly.Length - 1].Y);
+			foreach(Point pt in poly) {
+				 if (pt.X > oldPoint.X) {
+					p1 = oldPoint;
+					p2 = pt;
+		        } else {
+					p1 = pt;
+					p2 = oldPoint;
+		        }
+				if ((pt.X < p.X) == (p.X <= oldPoint.X) && ((long)p.Y - (long)p1.Y) * (long)(p2.X - p1.X) < ((long)p2.Y - (long)p1.Y) * (long)(p.X - p1.X)) {
+					inside=!inside;
+				}
+				oldPoint=new Point(pt.X,pt.Y);
+			}
+			return(inside);
+		}
 	}
 }
 
@@ -234,7 +278,7 @@ namespace glass.config {
 	public static class Config {
 		public static List<UserList> Users = new List<UserList>();
 		public static List<PictureBox> UserFaces = new List<PictureBox>();
-		public static int LoggedInUser=0;
+		public static UserList LoggedInUser;
 		
 		public static void SaveConfig() {
 			throw new NotImplementedException();
