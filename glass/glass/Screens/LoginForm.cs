@@ -88,7 +88,9 @@ namespace glass {
 		
 		public void ClickFace(object sender, EventArgs e) {
 			PictureBox pct=(PictureBox)sender;
-			MessageBox.Show(Config.Users[pct.TabIndex-1].id.ToString());
+			Config.LoggedInUser=Config.Users[pct.TabIndex-1].id;
+			glass.Screens.MainMenuScreen frmMainMenu =new glass.Screens.MainMenuScreen();
+			frmMainMenu.Show(this);
 		}
 		
 		public void PicExitClick(object sender, EventArgs e) {

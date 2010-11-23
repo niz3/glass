@@ -1,11 +1,11 @@
 ﻿/*
- * Created by SharpDevelop.
- * User: Axel
- * Date: 2010-11-05
- * Time: 14:03
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ Ta en bild med en webkamera
+ Axel Isaksson (http://h4xxel.ath.cx/)
+ Använder DirectShow.NET (http://directshownet.sf.net/)
+ Public Domain, gör vad du vill med källkoden
+ DLL-filen DirectShowLib-2005.dll är släppt under licensen LGPL, se directshowlib-license.txt
  */
+ 
 using System;
 using System.Drawing;
 using System.Collections;
@@ -16,23 +16,22 @@ using System.Drawing.Imaging;
 using System.Diagnostics;
 
 namespace nykamera {
-	/// <summary>
-	/// Description of MainForm.
-	/// </summary>
 	public partial class MainForm : Form {
 		private System.ComponentModel.Container components = null;
 		private Capture cam;
 		IntPtr m_ip = IntPtr.Zero;
+		
 		public MainForm() {
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
 			
-			
+			//Initiera webkameran och rita ut bilden på pictureBox1
+			//Webkamera nummer 0
+			//Upplösning: 640x480, 24bitar färger
 			cam=new Capture(0,640,480,24,pictureBox1);
 		}
 		
+		//Funktion för att städa upp efter oss
+		//Viktig!!
 		protected override void Dispose( bool disposing ) {
             if( disposing ) {
                 if (components != null)  {
@@ -47,6 +46,8 @@ namespace nykamera {
             }
         }
 		
+		//Städa upp när vi stänger fönstret
+		//Om denna funktion inte finns krashar programmet när man stänger av!
 		void MainFormFormClosed(object sender, FormClosedEventArgs e){
 			cam.Dispose();
 
@@ -56,16 +57,20 @@ namespace nykamera {
             }
 		}
 		
+		//Ta en bild när vi klickar
 		void Button1Click(object sender, EventArgs e){
+			//Här tar vi en bild och gör en bitmap av den
+			//bitmapen finns i variabeln b
 			m_ip=cam.Click();
 			Bitmap b = new Bitmap(cam.Width, cam.Height, cam.Stride, PixelFormat.Format24bppRgb, m_ip);
+			//Bilden måste roteras för att inte vara upp-och-ner
 			b.RotateFlip(RotateFlipType.RotateNoneFlipY);
-			b.Save(Environment.GetEnvironmentVariable("temp")+"\\snap.png");
-			Process paint=new Process();
-			paint.StartInfo.FileName="mspaint.exe";
-			paint.StartInfo.Arguments=Environment.GetEnvironmentVariable("temp")+"\\snap.png";
-			paint.Start();
-			Application.Exit();
+			
+			//Vi öppnar ett nytt fönster och visar bilden där
+			VisaBild frmVisaBild=new VisaBild();
+			PictureBox picPictureBox1=(PictureBox)frmVisaBild.Controls.Find("pictureBox1",true)[0];
+			picPictureBox1.Image=b;
+			frmVisaBild.Show();
 		}
 	}
 }

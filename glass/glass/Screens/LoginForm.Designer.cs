@@ -1,10 +1,7 @@
 ﻿/*
- * Created by SharpDevelop.
  * User: Axel
  * Date: 2010-11-08
  * Time: 18:49
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 namespace glass
 {
@@ -58,7 +55,7 @@ namespace glass
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(682, 519);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(682, 528);
 			this.tableLayoutPanel1.TabIndex = 1;
 			// 
 			// pctUp
@@ -84,9 +81,9 @@ namespace glass
 			// picExit
 			// 
 			this.picExit.Image = global::glass.Resources.exit;
-			this.picExit.Location = new System.Drawing.Point(12, 547);
+			this.picExit.Location = new System.Drawing.Point(12, 556);
 			this.picExit.Name = "picExit";
-			this.picExit.Size = new System.Drawing.Size(100, 50);
+			this.picExit.Size = new System.Drawing.Size(32, 32);
 			this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.picExit.TabIndex = 4;
 			this.picExit.TabStop = false;

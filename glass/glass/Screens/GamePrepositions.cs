@@ -14,39 +14,37 @@ namespace glass.Screens {
 	/// </summary>
 	public partial class GamePrepositions : Form {
 		private Point offset;
+		private bool dragging=false;
 		public GamePrepositions() {
 			InitializeComponent();
 			DrawableItems d=new DrawableItems();
 			d.Parent=drawArea1;
-			d.Image=global::glass.Resources.exit;
+			d.Image=global::glass.Resources.boll_fotboll;
 			d.Bounds=new Rectangle(5,10,64,64);
 			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 			d.MouseMove+= new DrawableItems.ItemMouseEventHandler(MoveMovable);
 			drawArea1.Items.Add(d);
+			
 			d=new DrawableItems();
 			d.Parent=drawArea1;
-			d.Image=global::glass.Resources.camera;
-			d.Bounds=new Rectangle(20,20,64,64);
-			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
-			d.MouseMove+= new DrawableItems.ItemMouseEventHandler(MoveMovable);
-			drawArea1.Items.Add(d);
-			d=new DrawableItems();
-			d.Parent=drawArea1;
-			d.Image=global::glass.Resources.up;
-			d.Bounds=new Rectangle(100,100,d.Image.Width,d.Image.Height);
+			d.Image=global::glass.Resources.boll_fotboll;
+			d.Bounds=new Rectangle(100,10,64,64);
 			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 			d.MouseMove+= new DrawableItems.ItemMouseEventHandler(MoveMovable);
 			drawArea1.Items.Add(d);
 		}
 		private void ClickMovable(DrawableItems sender, MouseEventArgs e) {
+			drawArea1.ActiveItem=sender;
 			offset=new Point(e.X,e.Y);
 			sender.Parent.BringItemToFront(sender);
+			dragging=!dragging;
 		}
 		private void MoveMovable(DrawableItems sender,MouseEventArgs e) {
-			if(e.Button==MouseButtons.Left) {
+			if(dragging) {
 				Point p=sender.Bounds.Location;
 				sender.Bounds=new Rectangle(new Point(p.X+e.X-offset.X,p.Y+e.Y-offset.Y),new Size(sender.Bounds.Width,sender.Bounds.Height));
-				drawArea1.Invalidate();
+				Rectangle InvalidateRect=new Rectangle(Math.Min(sender.Bounds.X,p.X),Math.Min(sender.Bounds.Y,p.Y),sender.Bounds.Width+Math.Abs(sender.Bounds.X-p.X),sender.Bounds.Height+Math.Abs(sender.Bounds.Y-p.Y));
+				drawArea1.Invalidate(InvalidateRect);
 			}
 		}
 	}

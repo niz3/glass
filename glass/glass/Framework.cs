@@ -17,11 +17,13 @@ using System.Drawing.Drawing2D;
 
 namespace glass.framework {
 	public class DrawableItems {
+		#region Declarations
 		public delegate void ItemEventHandler(DrawableItems sender,EventArgs e);
 		public delegate void ItemMouseEventHandler(DrawableItems sender, MouseEventArgs e);
 		private Rectangle bounds;
 		private Bitmap image;
 		private DrawArea parent;
+		#endregion
 		#region Properties
 		public DrawArea Parent {
 			get {return(parent);}
@@ -36,11 +38,13 @@ namespace glass.framework {
 			set {bounds=value;}
 		}
 		#endregion
+		#region Events
 		public event ItemEventHandler MouseEnter;
 		public event ItemEventHandler MouseLeave;
 		public event ItemMouseEventHandler MouseDown;
 		public event ItemMouseEventHandler MouseUp;
 		public event ItemMouseEventHandler MouseMove;
+		#endregion
 		#region Overloads
 		public DrawableItems() {
 			MouseMove+= new ItemMouseEventHandler(stubMouseEvent);
@@ -59,7 +63,7 @@ namespace glass.framework {
 			this.bounds=bnd;
 		}
 		#endregion
-		#region stubs
+		#region Stubs
 		private void stubEvent(DrawableItems sender, EventArgs e) {
 		}
 		private void stubMouseEvent(DrawableItems sender, MouseEventArgs e) {
@@ -89,8 +93,9 @@ namespace glass.framework {
 	    protected Graphics g;
 	    private Point mousePrevious=new Point(0,0);
 	    public List<DrawableItems> Items=new List<DrawableItems>();
+	    public DrawableItems ActiveItem=null;
 	    
-	    //setting bits for transparency
+	    //setting control bits for transparency
 	    protected override CreateParams CreateParams {
 	        get {
 	            CreateParams p = base.CreateParams;
@@ -102,24 +107,31 @@ namespace glass.framework {
 	    	this.MouseMove+= new MouseEventHandler(stubMouseMove);
 	    	this.MouseUp+= new MouseEventHandler(stubMouseUp);
 	    	this.MouseDown+= new MouseEventHandler(stubMouseDown);
-	    }
+	    	//Make sure the background does not flicker by setting a few control bits
+	    	this.SetStyle(ControlStyles.AllPaintingInWmPaint|ControlStyles.UserPaint|ControlStyles.DoubleBuffer,true);
+		}
 	    #region MouseStubs
 	    private void stubMouseMove(object sender,MouseEventArgs e) {
 	    	EventArgs ee=new EventArgs();
-	    	foreach (DrawableItems item in Items) {
-	    		if(item.Bounds.Contains(new Point(e.X,e.Y))) {
-	    			MouseEventArgs me=new MouseEventArgs(e.Button,e.Clicks,e.X-item.Bounds.X,e.Y-item.Bounds.Y,e.Delta);
-	    			item.RaiseMouseMove(sender,me);
-	    			if(!item.Bounds.Contains(mousePrevious)) {
-	    				item.RaiseMouseEnter(sender,ee);
-	    			}
-	    			break;
-	    		}
-	    		else {
-	    			if(item.Bounds.Contains(mousePrevious)) {
-	    				item.RaiseMouseLeave(sender,ee);
-	    			}
-	    		}
+	    	if(this.ActiveItem!=null) {
+	    		MouseEventArgs me=new MouseEventArgs(e.Button,e.Clicks,e.X-ActiveItem.Bounds.X,e.Y-ActiveItem.Bounds.Y,e.Delta);
+	    		this.ActiveItem.RaiseMouseMove(sender,me);
+	    	}else{
+		    	foreach (DrawableItems item in Items) {
+		    		if(item.Bounds.Contains(new Point(e.X,e.Y))) {
+		    			MouseEventArgs me=new MouseEventArgs(e.Button,e.Clicks,e.X-item.Bounds.X,e.Y-item.Bounds.Y,e.Delta);
+		    			item.RaiseMouseMove(sender,me);
+		    			if(!item.Bounds.Contains(mousePrevious)) {
+		    				item.RaiseMouseEnter(sender,ee);
+		    			}
+		    			break;
+		    		}
+		    		else {
+		    			if(item.Bounds.Contains(mousePrevious)) {
+		    				item.RaiseMouseLeave(sender,ee);
+		    			}
+		    		}
+		    	}
 	    	}
 	    	mousePrevious=new Point(e.X,e.Y);
 	    }
@@ -147,7 +159,8 @@ namespace glass.framework {
 	    	Items.Insert(0,item);
 	    	Invalidate();
 	    }
-	    protected override void OnPaintBackground(PaintEventArgs e) {
+	    //This method does not work with the flicker-reducing style bits set
+	    /*protected override void OnPaintBackground(PaintEventArgs e) {
 	    	this.g = e.Graphics;
 	    	Rectangle rect=new Rectangle(0,0,this.Width,this.Height);
 	    	if(this.BackColor!=Color.Transparent) {
@@ -155,15 +168,15 @@ namespace glass.framework {
 	    		this.g.FillRectangle(b,rect);
 	    	}
 	    	if(this.BackgroundImage!=null) {
-				this.g.DrawImage((Image)this.BackgroundImage,rect);
+				this.g.DrawImage((Image)this.BackgroundImage,e.ClipRectangle,rect,GraphicsUnit.Pixel);
 			}
-	    }
+	    	g.Dispose();
+	    }*/
 	    protected override void OnPaint(PaintEventArgs e) {
-			this.g = e.Graphics;
 			//reverse the order so the item on top gets drawn last
 			Items.Reverse();
 			foreach (DrawableItems item in Items) {
-				g.DrawImage(item.Image,item.Bounds);
+				e.Graphics.DrawImage(item.Image,item.Bounds);
 			}
 			//and restore the normal order
 			Items.Reverse();
@@ -221,6 +234,7 @@ namespace glass.config {
 	public static class Config {
 		public static List<UserList> Users = new List<UserList>();
 		public static List<PictureBox> UserFaces = new List<PictureBox>();
+		public static int LoggedInUser=0;
 		
 		public static void SaveConfig() {
 			throw new NotImplementedException();
