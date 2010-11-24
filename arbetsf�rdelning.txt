@@ -1,6 +1,0 @@
-Fördelning av frukter: nils
-Kläder (klä på): dylan
-Prepositioner: axel
-Färger: max
-
-Axel gör även ramverk och menyer. De övriga delarna i programmet delas upp senare.
