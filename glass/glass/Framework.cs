@@ -190,6 +190,12 @@ namespace glass.framework {
 
 	public static class Framework {
 		private static Random rnd=new Random(DateTime.Now.Millisecond);
+		public enum LevelScores {
+			Prepositons=1<<0,
+			Clothes=1<<3,
+			Fruits=1<<6,
+			Colors=1<<9,
+		};
 		public static int rndInt() {
 			return((int)rnd.Next());
 		}
@@ -211,7 +217,7 @@ namespace glass.framework {
 			sender.Parent.Cursor=Cursors.Default;
 		}
 		
-		public static int AddUser(string name, Bitmap picture,Difficulty difficulty,int score) {
+		public static int AddUser(string name, Bitmap picture,Difficulty difficulty,uint score) {
 			UserList temp = new UserList();
 			temp.id=Config.Users.Count;temp.picture=picture;temp.score=score;temp.difficulty=difficulty;temp.name=name;
 			Config.Users.Add(temp);
@@ -257,7 +263,7 @@ namespace glass.config {
 		public int id;
 		public string name;
 		public Bitmap picture;
-		public int score;
+		public uint score;
 		public Difficulty difficulty;
 	};
 	public static class WebCam {
@@ -294,6 +300,8 @@ namespace glass.config {
 			u.SetValue("name",ul.name);
 			u.SetValue("difficulty",Convert.ToInt32(ul.difficulty));
 			u.SetValue("score",ul.score);
+		}
+		public static void UpdateScore(int id) {
 			
 		}
 		public static void LoadConfig() {
@@ -306,7 +314,7 @@ namespace glass.config {
 			foreach (string s in regUsers.GetSubKeyNames()) {
 				RegistryKey u = regUsers.OpenSubKey(s);
 				UserList temp = new UserList();
-				temp.id=(int)u.GetValue("id",Users.Count);temp.picture=new Bitmap(app.confdir+"\\images\\"+(string)u.GetValue("image",""));temp.score=(int)u.GetValue("score",0);temp.difficulty=(Difficulty)u.GetValue("difficulty",Difficulty.easy);temp.name=(string)u.GetValue("name","");
+				temp.id=(int)u.GetValue("id",Users.Count);temp.picture=new Bitmap(app.confdir+"\\images\\"+(string)u.GetValue("image",""));temp.score=Convert.ToUInt32((int)u.GetValue("score",0));temp.difficulty=(Difficulty)u.GetValue("difficulty",Difficulty.easy);temp.name=(string)u.GetValue("name","");
 				Users.Insert(temp.id,temp);
 			}
 			

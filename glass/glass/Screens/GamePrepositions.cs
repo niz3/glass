@@ -6,6 +6,7 @@
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 using glass.framework;
 using glass.config;
@@ -116,6 +117,10 @@ namespace glass.Screens {
 					   	prgProgress.PerformStep();
 					   	drawArea1.Items.Remove(sender);
 					   	if(correct>=total) {
+					   		if((Config.LoggedInUser.score&((int)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty)) {
+					   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty;
+					   			Config.SaveUser(Config.LoggedInUser.id);
+					   		}
 					   		MessageBox.Show("Bra jobbat!");
 					   		this.Close();
 					   	}
