@@ -249,10 +249,10 @@ namespace glass.framework {
 
 namespace glass.config {
 	public enum Difficulty {
-			easy,
-			normal,
-			hard,
-		};
+		easy,
+		normal,
+		hard,
+	};
 	public struct UserList {
 		public int id;
 		public string name;
