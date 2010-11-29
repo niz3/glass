@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: nn930428
+ * User: NILSS
  * Date: 2010-11-22
  * Time: 10:36
  * 
@@ -9,25 +9,33 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using glass.framework;
 
 namespace glass.Screens
 {
 	/// <summary>
-	/// Description of GameFruits.
+	/// A fun game with fruits :D
 	/// </summary>
 	public partial class GameFruits : Form
 	{
-		public GameFruits()
-		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
+		public GameFruits(){
 			InitializeComponent();
+			DrawableItems d=new DrawableItems();
+			d.Parent=drawArea1;
+			d.Image=global::glass.Resources.Plate;
+			d.Bounds=new Rectangle(0,300,100,100);
+			drawArea1.Items.Add(d);
 			
-			Hej
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
+//			d.Parent=drawArea1;
+//			d.Image=global::glass.Resources.Plate;
+//			d.Bounds=new Rectangle(700,300,100,100);
+//			drawArea1.Items.Add(d);
+		}
+		void PicBackClick(object sender, EventArgs e){
+			Dialog.YesNoDialog AreYouSure =new glass.Dialog.YesNoDialog();
+			AreYouSure.ShowDialog();
+			if(AreYouSure.Answer){
+				this.Close();}
 		}
 	}
 }

@@ -12,11 +12,6 @@ namespace glass.Screens {
 	public partial class MainMenuScreen : Form {
 		public MainMenuScreen() {
 			InitializeComponent();
-			picBack.MouseEnter+= new EventHandler(Framework.EnterClickable);
-			picBack.MouseLeave+= new EventHandler(Framework.LeaveClickable);
-			
-			picPrepositions.MouseEnter+=new EventHandler(Framework.EnterClickable);
-			picPrepositions.MouseLeave+=new EventHandler(Framework.LeaveClickable);
 		}
 		
 		void PicBackClick(object sender, EventArgs e) {
@@ -26,6 +21,11 @@ namespace glass.Screens {
 		void PicPrepositionsClick(object sender, EventArgs e) {
 			GamePrepositions frmGamePrepositions=new GamePrepositions();
 			frmGamePrepositions.Show(this);
+		}
+		
+		void PicFruitsClick(object sender, EventArgs e){
+			GameFruits frmGameFruits=new GameFruits();
+			frmGameFruits.Show(this);
 		}
 	}
 }

@@ -102,6 +102,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap Plate {
+			get {
+				object obj = ResourceManager.GetObject("Plate", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap rum_prepositioner {
 			get {
 				object obj = ResourceManager.GetObject("rum_prepositioner", resourceCulture);
