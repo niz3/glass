@@ -60,6 +60,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap boll_fotboll {
+			get {
+				object obj = ResourceManager.GetObject("boll_fotboll", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap button {
 			get {
 				object obj = ResourceManager.GetObject("button", resourceCulture);
@@ -91,6 +98,13 @@ namespace glass {
 		internal static System.Drawing.Bitmap new_user {
 			get {
 				object obj = ResourceManager.GetObject("new_user", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap rum_prepositioner {
+			get {
+				object obj = ResourceManager.GetObject("rum_prepositioner", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}

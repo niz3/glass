@@ -1,15 +1,15 @@
 ﻿/*
  * User: Axel
- * Date: 2010-11-17
- * Time: 19:14
+ * Date: 2010-11-22
+ * Time: 14:32
  */
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace glass.Screens {
-	public partial class MainMenu : Form {
-		public MainMenu() {
+namespace nykamera {
+	public partial class VisaBild : Form {
+		public VisaBild() {
 			InitializeComponent();
 		}
 	}

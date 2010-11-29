@@ -16,3 +16,4 @@ C:\Users\Axel\Projekt\glass\glass\tools\nykamera\nykamera\obj\x86\Debug\Generate
 C:\Users\Axel\Projekt\glass\glass\tools\nykamera\nykamera\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Axel\Projekt\glass\glass\tools\nykamera\nykamera\obj\x86\Debug\nykamera.exe
 C:\Users\Axel\Projekt\glass\glass\tools\nykamera\nykamera\obj\x86\Debug\nykamera.pdb
+C:\Users\Axel\Projekt\glass\glass\tools\nykamera\nykamera\obj\x86\Debug\nykamera.VisaBild.resources
