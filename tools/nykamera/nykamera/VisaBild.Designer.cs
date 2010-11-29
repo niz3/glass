@@ -1,11 +1,11 @@
 ﻿/*
  * User: Axel
- * Date: 2010-11-17
- * Time: 19:14
+ * Date: 2010-11-22
+ * Time: 14:32
  */
-namespace glass.Screens
+namespace nykamera
 {
-	partial class MainMenu
+	partial class VisaBild
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -33,20 +33,32 @@ namespace glass.Screens
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// MainMenu
+			// pictureBox1
+			// 
+			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(284, 262);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
+			// 
+			// VisaBild
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Blue;
-			this.ClientSize = new System.Drawing.Size(784, 562);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "MainMenu";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "MainMenu";
-			this.TopMost = true;
+			this.ClientSize = new System.Drawing.Size(284, 262);
+			this.Controls.Add(this.pictureBox1);
+			this.Name = "VisaBild";
+			this.Text = "VisaBild";
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

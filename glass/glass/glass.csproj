@@ -65,6 +65,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog\DiffucultyDialog.cs" />
+    <Compile Include="Dialog\DiffucultyDialog.Designer.cs">
+      <DependentUpon>DiffucultyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\YesNoDialog.cs" />
+    <Compile Include="Dialog\YesNoDialog.Designer.cs">
+      <DependentUpon>YesNoDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Framework.cs" />
     <Compile Include="Dialog\Capture.cs" />
     <Compile Include="Dialog\WebcamDialog.cs" />
@@ -76,10 +84,6 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\GameClothes.cs" />
-    <Compile Include="Screens\GameClothes.Designer.cs">
-      <DependentUpon>GameClothes.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\GamePrepositions.cs" />
     <Compile Include="Screens\GamePrepositions.Designer.cs">
@@ -94,14 +98,20 @@
     <Compile Include="Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Screens\MainMenu.cs" />
-    <Compile Include="Screens\MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <Compile Include="Screens\MainMenuScreen.cs" />
+    <Compile Include="Screens\MainMenuScreen.Designer.cs">
+      <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialog\DiffucultyDialog.resx">
+      <DependentUpon>DiffucultyDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\WebcamDialog.resx">
       <DependentUpon>WebcamDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\YesNoDialog.resx">
+      <DependentUpon>YesNoDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -115,8 +125,8 @@
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\MainMenuScreen.resx">
+      <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

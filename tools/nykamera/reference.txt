@@ -1,0 +1,4 @@
+Uses DirectShow.NET
+
+http://directshownet.sourceforge.net/
+DLL-License: Gnu Lesser General Public License, see directshownet-license.txt
