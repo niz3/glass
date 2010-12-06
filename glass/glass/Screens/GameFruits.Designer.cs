@@ -38,7 +38,9 @@ namespace glass.Screens
 		{
 			this.drawArea1 = new glass.framework.DrawArea();
 			this.picBack = new System.Windows.Forms.PictureBox();
+			this.picKlar = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picKlar)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// drawArea1
@@ -60,12 +62,23 @@ namespace glass.Screens
 			this.picBack.TabStop = false;
 			this.picBack.Click += new System.EventHandler(this.PicBackClick);
 			// 
+			// picKlar
+			// 
+			this.picKlar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.picKlar.Image = global::glass.Resources.Klar;
+			this.picKlar.Location = new System.Drawing.Point(0, 0);
+			this.picKlar.Name = "picKlar";
+			this.picKlar.Size = new System.Drawing.Size(32, 32);
+			this.picKlar.TabIndex = 0;
+			this.picKlar.TabStop = false;
+			// 
 			// GameFruits
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(800, 600);
+			this.Controls.Add(this.picKlar);
 			this.Controls.Add(this.picBack);
 			this.Controls.Add(this.drawArea1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,8 +88,10 @@ namespace glass.Screens
 			this.Text = "GameFruits";
 			this.TopMost = true;
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picKlar)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.PictureBox picKlar;
 		private System.Windows.Forms.PictureBox picBack;
 		private glass.framework.DrawArea drawArea1;
 	}
