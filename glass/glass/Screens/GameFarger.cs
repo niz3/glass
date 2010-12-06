@@ -15,9 +15,9 @@ namespace glass.Screens
 	/// <summary>
 	/// Description of farger.
 	/// </summary>
-	public partial class farger : Form
+	public partial class GameFarger : Form
 	{
-		public farger()
+		public GameFarger()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
@@ -30,6 +30,21 @@ namespace glass.Screens
 		}
 		
 		void PictureBox2Click(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void PictureBox1Click(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void TextBox1TextChanged(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void Label1Click(object sender, EventArgs e)
 		{
 			
 		}

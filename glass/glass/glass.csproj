@@ -71,6 +71,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\GameFarger.cs" />
+    <Compile Include="Screens\GameFarger.Designer.cs">
+      <DependentUpon>GameFarger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\GameFruits.cs" />
+    <Compile Include="Screens\GameFruits.Designer.cs">
+      <DependentUpon>GameFruits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\GamePrepositions.cs" />
+    <Compile Include="Screens\GamePrepositions.Designer.cs">
+      <DependentUpon>GamePrepositions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\LoginForm.cs" />
     <Compile Include="Screens\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -97,6 +109,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\GameFarger.resx">
+      <DependentUpon>GameFarger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\GameFruits.resx">
+      <DependentUpon>GameFruits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\GamePrepositions.resx">
+      <DependentUpon>GamePrepositions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
