@@ -302,7 +302,11 @@ namespace glass.config {
 			u.SetValue("score",ul.score);
 		}
 		public static void UpdateScore(int id) {
-			
+			UserList ul=Users[id];
+			RegistryKey reg=Registry.CurrentUser.OpenSubKey("Software\\"+app.name,true);
+			RegistryKey regUsers=reg.OpenSubKey("Users",true);
+			RegistryKey u=regUsers.CreateSubKey(ul.id.ToString("000"));
+			u.SetValue("score",Convert.ToInt32(ul.score));
 		}
 		public static void LoadConfig() {
 			RegistryKey regConfig=Registry.CurrentUser.OpenSubKey("Software\\"+app.name,false);
@@ -314,7 +318,9 @@ namespace glass.config {
 			foreach (string s in regUsers.GetSubKeyNames()) {
 				RegistryKey u = regUsers.OpenSubKey(s);
 				UserList temp = new UserList();
-				temp.id=(int)u.GetValue("id",Users.Count);temp.picture=new Bitmap(app.confdir+"\\images\\"+(string)u.GetValue("image",""));temp.score=Convert.ToUInt32((int)u.GetValue("score",0));temp.difficulty=(Difficulty)u.GetValue("difficulty",Difficulty.easy);temp.name=(string)u.GetValue("name","");
+				temp.id=(int)u.GetValue("id",Users.Count);temp.picture=new Bitmap(app.confdir+"\\images\\"+(string)u.GetValue("image",""));temp.difficulty=(Difficulty)u.GetValue("difficulty",Difficulty.easy);temp.name=(string)u.GetValue("name","");
+				int iii=(int)u.GetValue("score",0);
+				temp.score=Convert.ToUInt32(iii);
 				Users.Insert(temp.id,temp);
 			}
 			
