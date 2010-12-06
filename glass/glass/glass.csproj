@@ -61,6 +61,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\farger.cs" />
+    <Compile Include="Screens\farger.Designer.cs">
+      <DependentUpon>farger.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\LoginForm.cs" />
     <Compile Include="Screens\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\farger.resx">
+      <DependentUpon>farger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

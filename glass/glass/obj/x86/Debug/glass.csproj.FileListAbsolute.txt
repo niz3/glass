@@ -18,3 +18,16 @@ C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Resources.reso
 C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.LoginForm.resources
 C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Dialog.WebcamDialog.resources
 C:\Users\Axel\Projekt\glass\glass\glass\glass\bin\Debug\DirectShowLib-2005.dll
+D:\Projekt\glass\glass\glass\bin\Debug\glass.exe
+D:\Projekt\glass\glass\glass\bin\Debug\glass.pdb
+D:\Projekt\glass\glass\glass\bin\Debug\DirectShowLib-2005.dll
+D:\Projekt\glass\glass\glass\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.Dialog.WebcamDialog.resources
+D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.MainForm.resources
+D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.Screens.farger.resources
+D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.LoginForm.resources
+D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.Resources.resources
+D:\Projekt\glass\glass\glass\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Projekt\glass\glass\glass\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.exe
+D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.pdb

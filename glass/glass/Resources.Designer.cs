@@ -60,6 +60,27 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap bil_bla {
+			get {
+				object obj = ResourceManager.GetObject("bil_bla", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap bil_gron {
+			get {
+				object obj = ResourceManager.GetObject("bil_gron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap bil_rod {
+			get {
+				object obj = ResourceManager.GetObject("bil_rod", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap button {
 			get {
 				object obj = ResourceManager.GetObject("button", resourceCulture);
