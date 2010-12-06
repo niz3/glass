@@ -37,10 +37,12 @@ namespace glass.Screens
 			this.picPrepositions = new System.Windows.Forms.PictureBox();
 			this.picFruits = new System.Windows.Forms.PictureBox();
 			this.picBack = new System.Windows.Forms.PictureBox();
+			this.PicColors = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picPrepositions)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picFruits)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.PicColors)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -49,6 +51,7 @@ namespace glass.Screens
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanel1.Controls.Add(this.PicColors, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.picPrepositions, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.picFruits, 1, 0);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 50);
@@ -97,6 +100,19 @@ namespace glass.Screens
 			this.picBack.TabStop = false;
 			this.picBack.Click += new System.EventHandler(this.PicBackClick);
 			// 
+			// PicColors
+			// 
+			this.PicColors.BackColor = System.Drawing.Color.Yellow;
+			this.PicColors.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.PicColors.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PicColors.Location = new System.Drawing.Point(5, 361);
+			this.PicColors.Name = "PicColors";
+			this.PicColors.Size = new System.Drawing.Size(251, 172);
+			this.PicColors.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.PicColors.TabIndex = 2;
+			this.PicColors.TabStop = false;
+			this.PicColors.Click += new System.EventHandler(this.PicColorsClick);
+			// 
 			// MainMenuScreen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,8 +131,10 @@ namespace glass.Screens
 			((System.ComponentModel.ISupportInitialize)(this.picPrepositions)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picFruits)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.PicColors)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.PictureBox PicColors;
 		private System.Windows.Forms.PictureBox picFruits;
 		private System.Windows.Forms.PictureBox picPrepositions;
 		private System.Windows.Forms.PictureBox picBack;

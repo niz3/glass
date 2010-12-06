@@ -27,5 +27,10 @@ namespace glass.Screens {
 			GameFruits frmGameFruits=new GameFruits();
 			frmGameFruits.Show(this);
 		}
+		
+		void PicColorsClick(object sender, EventArgs e){
+			GameFarger frmGameFarger=new GameFarger();
+			frmGameFarger.Show();
+		}
 	}
 }
