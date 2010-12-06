@@ -16,11 +16,12 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
-    <DebugSymbols>True</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>Full</DebugType>
     <Optimize>False</Optimize>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -50,6 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog\DiffucultyDialog.cs" />
+    <Compile Include="Dialog\DiffucultyDialog.Designer.cs">
+      <DependentUpon>DiffucultyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\YesNoDialog.cs" />
+    <Compile Include="Dialog\YesNoDialog.Designer.cs">
+      <DependentUpon>YesNoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework.cs" />
     <Compile Include="Dialog\Capture.cs" />
     <Compile Include="Dialog\WebcamDialog.cs" />
     <Compile Include="Dialog\WebcamDialog.Designer.cs">
@@ -61,10 +71,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\farger.cs" />
-    <Compile Include="Screens\farger.Designer.cs">
-      <DependentUpon>farger.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\LoginForm.cs" />
     <Compile Include="Screens\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -74,22 +80,32 @@
     <Compile Include="Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Screens\MainMenuScreen.cs" />
+    <Compile Include="Screens\MainMenuScreen.Designer.cs">
+      <DependentUpon>MainMenuScreen.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialog\DiffucultyDialog.resx">
+      <DependentUpon>DiffucultyDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\WebcamDialog.resx">
       <DependentUpon>WebcamDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\YesNoDialog.resx">
+      <DependentUpon>YesNoDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\farger.resx">
-      <DependentUpon>farger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainMenuScreen.resx">
+      <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
