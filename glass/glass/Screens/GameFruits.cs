@@ -23,13 +23,13 @@ namespace glass.Screens
 			DrawableItems d=new DrawableItems();
 			d.Parent=drawArea1;
 			d.Image=global::glass.Resources.Plate;
-			d.Bounds=new Rectangle(0,300,100,100);
+			d.Bounds=new Rectangle(0,300,250,250);
 			drawArea1.Items.Add(d);
 			
-//			d.Parent=drawArea1;
-//			d.Image=global::glass.Resources.Plate;
-//			d.Bounds=new Rectangle(700,300,100,100);
-//			drawArea1.Items.Add(d);
+			d.Parent=drawArea1;
+			d.Image=global::glass.Resources.Plate;
+			d.Bounds=new Rectangle(550,300,250,250);
+			drawArea1.Items.Add(d);
 		}
 		void PicBackClick(object sender, EventArgs e){
 			Dialog.YesNoDialog AreYouSure =new glass.Dialog.YesNoDialog();
