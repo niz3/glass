@@ -6,15 +6,13 @@
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 using glass.framework;
 using glass.config;
 using System.Collections.Generic;
 
 namespace glass.Screens {
-	/// <summary>
-	/// Description of GamePrepositions.
-	/// </summary>
 	struct Items {
 		private string name;
 		private string ending;
@@ -116,6 +114,11 @@ namespace glass.Screens {
 					   	prgProgress.PerformStep();
 					   	drawArea1.Items.Remove(sender);
 					   	if(correct>=total) {
+					   		if((Config.LoggedInUser.score&((int)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty)) {
+					   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty;
+					   			MessageBox.Show(Config.LoggedInUser.score.ToString());
+					   			Config.UpdateScore(Config.LoggedInUser.id);
+					   		}
 					   		MessageBox.Show("Bra jobbat!");
 					   		this.Close();
 					   	}
