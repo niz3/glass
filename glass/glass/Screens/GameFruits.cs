@@ -27,8 +27,8 @@ namespace glass.Screens
 			paron,
 		};
 		Bitmap[] fruitImg=new Bitmap[] {
-			global::glass.Resources.Banan,
-			global::glass.Resources.Äpple,
+			global::glass.Resources.frukt_banan,
+			global::glass.Resources.frukt_apple,
 			global::glass.Resources.bil_bla,
 			global::glass.Resources.boll_fotboll,
 		};
@@ -56,7 +56,7 @@ namespace glass.Screens
 			for(int i=0;i<((int)Config.LoggedInUser.difficulty)+2;i++) {
 				plate[i]=new DrawableItems();
 				plate[i].Parent=drawArea1;
-				plate[i].Image=global::glass.Resources.Plate;
+				plate[i].Image=global::glass.Resources.plate;
 				plate[i].Bounds=platePositions[i];
 				drawArea1.Items.Add(plate[i]);
 			}
