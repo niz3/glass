@@ -60,6 +60,27 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap bil_bla {
+			get {
+				object obj = ResourceManager.GetObject("bil_bla", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap bil_gron {
+			get {
+				object obj = ResourceManager.GetObject("bil_gron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap bil_rod {
+			get {
+				object obj = ResourceManager.GetObject("bil_rod", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap boll_fotboll {
 			get {
 				object obj = ResourceManager.GetObject("boll_fotboll", resourceCulture);
@@ -74,37 +95,16 @@ namespace glass {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap byxor_bla {
-			get {
-				object obj = ResourceManager.GetObject("byxor_bla", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap byxor_gron {
-			get {
-				object obj = ResourceManager.GetObject("byxor_gron", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap byxor_gul {
-			get {
-				object obj = ResourceManager.GetObject("byxor_gul", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap byxor_rod {
-			get {
-				object obj = ResourceManager.GetObject("byxor_rod", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
 		internal static System.Drawing.Bitmap camera {
 			get {
 				object obj = ResourceManager.GetObject("camera", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap done {
+			get {
+				object obj = ResourceManager.GetObject("done", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -123,9 +123,51 @@ namespace glass {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap gubbe {
+		internal static System.Drawing.Bitmap frukt_apple {
 			get {
-				object obj = ResourceManager.GetObject("gubbe", resourceCulture);
+				object obj = ResourceManager.GetObject("frukt_apple", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_banan {
+			get {
+				object obj = ResourceManager.GetObject("frukt_banan", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_brun {
+			get {
+				object obj = ResourceManager.GetObject("hus_brun", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_gul {
+			get {
+				object obj = ResourceManager.GetObject("hus_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rodprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_rodprick", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rosa {
+			get {
+				object obj = ResourceManager.GetObject("hus_rosa", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_vitprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_vitprick", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -137,37 +179,16 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap plate {
+			get {
+				object obj = ResourceManager.GetObject("plate", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap rum_prepositioner {
 			get {
 				object obj = ResourceManager.GetObject("rum_prepositioner", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap troja_bla {
-			get {
-				object obj = ResourceManager.GetObject("troja_bla", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap troja_gron {
-			get {
-				object obj = ResourceManager.GetObject("troja_gron", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap troja_gul {
-			get {
-				object obj = ResourceManager.GetObject("troja_gul", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap troja_rod {
-			get {
-				object obj = ResourceManager.GetObject("troja_rod", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}

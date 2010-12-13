@@ -6,15 +6,13 @@
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 using glass.framework;
 using glass.config;
 using System.Collections.Generic;
 
 namespace glass.Screens {
-	/// <summary>
-	/// Description of GamePrepositions.
-	/// </summary>
 	struct Items {
 		private string name;
 		private string ending;
@@ -63,6 +61,8 @@ namespace glass.Screens {
 		private Items[] ItemCollection={
 			new Items("fotboll", "en", global::glass.Resources.boll_fotboll),
 			new Items("kamera", "n", global::glass.Resources.camera),
+			new Items("äpple", "t", global::glass.Resources.frukt_apple),
+			new Items("bil", "en", global::glass.Resources.bil_rod),
 		};
 		private Dictionary<Difficulty, Places[]> PlaceCollection=new Dictionary<Difficulty, Places[]>{
 			{Difficulty.easy,
@@ -116,6 +116,10 @@ namespace glass.Screens {
 					   	prgProgress.PerformStep();
 					   	drawArea1.Items.Remove(sender);
 					   	if(correct>=total) {
+					   		if((Config.LoggedInUser.score&((int)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty)) {
+					   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty;
+					   			Config.UpdateScore(Config.LoggedInUser);
+					   		}
 					   		MessageBox.Show("Bra jobbat!");
 					   		this.Close();
 					   	}

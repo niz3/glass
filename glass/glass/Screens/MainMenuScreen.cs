@@ -12,11 +12,6 @@ namespace glass.Screens {
 	public partial class MainMenuScreen : Form {
 		public MainMenuScreen() {
 			InitializeComponent();
-			picBack.MouseEnter+= new EventHandler(Framework.EnterClickable);
-			picBack.MouseLeave+= new EventHandler(Framework.LeaveClickable);
-			
-			picPrepositions.MouseEnter+=new EventHandler(Framework.EnterClickable);
-			picPrepositions.MouseLeave+=new EventHandler(Framework.LeaveClickable);
 		}
 		
 		void PicBackClick(object sender, EventArgs e) {
@@ -24,13 +19,26 @@ namespace glass.Screens {
 		}
 		
 		void PicPrepositionsClick(object sender, EventArgs e) {
+			SetDifficulty();
 			GamePrepositions frmGamePrepositions=new GamePrepositions();
 			frmGamePrepositions.Show(this);
 		}
 		
-		void PicClothesClick(object sender, EventArgs e){
-			GameClothes frmGameClothes=new GameClothes();
-			frmGameClothes.Show();
+		void PicFruitsClick(object sender, EventArgs e){
+			SetDifficulty();
+			GameFruits frmGameFruits=new GameFruits();
+			frmGameFruits.Show(this);
+		}
+		
+		void PicColorsClick(object sender, EventArgs e){
+			SetDifficulty();
+			GameFarger frmGameFarger=new GameFarger();
+			frmGameFarger.Show();
+		}
+		void SetDifficulty() {
+			Dialog.DifficultyDialog frmDifficultyDialog=new glass.Dialog.DifficultyDialog();
+			frmDifficultyDialog.ShowDialog();
+			config.Config.LoggedInUser.difficulty=frmDifficultyDialog.Difficulty;
 		}
 	}
 }

@@ -35,12 +35,14 @@ namespace glass.Screens
 		{
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.picPrepositions = new System.Windows.Forms.PictureBox();
+			this.picFruits = new System.Windows.Forms.PictureBox();
 			this.picBack = new System.Windows.Forms.PictureBox();
-			this.picClothes = new System.Windows.Forms.PictureBox();
+			this.PicColors = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picPrepositions)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picFruits)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.picClothes)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.PicColors)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -49,8 +51,9 @@ namespace glass.Screens
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanel1.Controls.Add(this.PicColors, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.picPrepositions, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.picClothes, 2, 0);
+			this.tableLayoutPanel1.Controls.Add(this.picFruits, 1, 0);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 50);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
@@ -63,6 +66,7 @@ namespace glass.Screens
 			// 
 			// picPrepositions
 			// 
+			this.picPrepositions.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picPrepositions.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picPrepositions.Image = global::glass.Resources.rum_prepositioner;
 			this.picPrepositions.Location = new System.Drawing.Point(5, 5);
@@ -73,8 +77,21 @@ namespace glass.Screens
 			this.picPrepositions.TabStop = false;
 			this.picPrepositions.Click += new System.EventHandler(this.PicPrepositionsClick);
 			// 
+			// picFruits
+			// 
+			this.picFruits.BackColor = System.Drawing.Color.Sienna;
+			this.picFruits.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.picFruits.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picFruits.Location = new System.Drawing.Point(262, 5);
+			this.picFruits.Name = "picFruits";
+			this.picFruits.Size = new System.Drawing.Size(251, 172);
+			this.picFruits.TabIndex = 1;
+			this.picFruits.TabStop = false;
+			this.picFruits.Click += new System.EventHandler(this.PicFruitsClick);
+			// 
 			// picBack
 			// 
+			this.picBack.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picBack.Image = global::glass.Resources.exit;
 			this.picBack.Location = new System.Drawing.Point(768, 0);
 			this.picBack.Name = "picBack";
@@ -83,17 +100,18 @@ namespace glass.Screens
 			this.picBack.TabStop = false;
 			this.picBack.Click += new System.EventHandler(this.PicBackClick);
 			// 
-			// picClothes
+			// PicColors
 			// 
-			this.picClothes.BackColor = System.Drawing.Color.Purple;
-			this.picClothes.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.picClothes.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.picClothes.Location = new System.Drawing.Point(519, 5);
-			this.picClothes.Name = "picClothes";
-			this.picClothes.Size = new System.Drawing.Size(252, 172);
-			this.picClothes.TabIndex = 1;
-			this.picClothes.TabStop = false;
-			this.picClothes.Click += new System.EventHandler(this.PicClothesClick);
+			this.PicColors.BackColor = System.Drawing.Color.Yellow;
+			this.PicColors.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.PicColors.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PicColors.Location = new System.Drawing.Point(5, 361);
+			this.PicColors.Name = "PicColors";
+			this.PicColors.Size = new System.Drawing.Size(251, 172);
+			this.PicColors.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.PicColors.TabIndex = 2;
+			this.PicColors.TabStop = false;
+			this.PicColors.Click += new System.EventHandler(this.PicColorsClick);
 			// 
 			// MainMenuScreen
 			// 
@@ -111,11 +129,13 @@ namespace glass.Screens
 			this.TopMost = true;
 			this.tableLayoutPanel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.picPrepositions)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picFruits)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.picClothes)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.PicColors)).EndInit();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.PictureBox picClothes;
+		private System.Windows.Forms.PictureBox PicColors;
+		private System.Windows.Forms.PictureBox picFruits;
 		private System.Windows.Forms.PictureBox picPrepositions;
 		private System.Windows.Forms.PictureBox picBack;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
