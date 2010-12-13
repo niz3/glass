@@ -74,6 +74,34 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap byxor_bla {
+			get {
+				object obj = ResourceManager.GetObject("byxor_bla", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap byxor_gron {
+			get {
+				object obj = ResourceManager.GetObject("byxor_gron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap byxor_gul {
+			get {
+				object obj = ResourceManager.GetObject("byxor_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap byxor_rod {
+			get {
+				object obj = ResourceManager.GetObject("byxor_rod", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap camera {
 			get {
 				object obj = ResourceManager.GetObject("camera", resourceCulture);
@@ -95,6 +123,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap gubbe {
+			get {
+				object obj = ResourceManager.GetObject("gubbe", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap new_user {
 			get {
 				object obj = ResourceManager.GetObject("new_user", resourceCulture);
@@ -105,6 +140,34 @@ namespace glass {
 		internal static System.Drawing.Bitmap rum_prepositioner {
 			get {
 				object obj = ResourceManager.GetObject("rum_prepositioner", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap troja_bla {
+			get {
+				object obj = ResourceManager.GetObject("troja_bla", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap troja_gron {
+			get {
+				object obj = ResourceManager.GetObject("troja_gron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap troja_gul {
+			get {
+				object obj = ResourceManager.GetObject("troja_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap troja_rod {
+			get {
+				object obj = ResourceManager.GetObject("troja_rod", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}

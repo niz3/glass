@@ -27,5 +27,10 @@ namespace glass.Screens {
 			GamePrepositions frmGamePrepositions=new GamePrepositions();
 			frmGamePrepositions.Show(this);
 		}
+		
+		void PicClothesClick(object sender, EventArgs e){
+			GameClothes frmGameClothes=new GameClothes();
+			frmGameClothes.Show();
+		}
 	}
 }
