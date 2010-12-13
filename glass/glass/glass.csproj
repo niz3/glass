@@ -55,6 +55,10 @@
     <Compile Include="Dialog\DiffucultyDialog.Designer.cs">
       <DependentUpon>DiffucultyDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\WebcamSetup.cs" />
+    <Compile Include="Dialog\WebcamSetup.Designer.cs">
+      <DependentUpon>WebcamSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\YesNoDialog.cs" />
     <Compile Include="Dialog\YesNoDialog.Designer.cs">
       <DependentUpon>YesNoDialog.cs</DependentUpon>
@@ -103,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\WebcamDialog.resx">
       <DependentUpon>WebcamDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\WebcamSetup.resx">
+      <DependentUpon>WebcamSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\YesNoDialog.resx">
       <DependentUpon>YesNoDialog.cs</DependentUpon>

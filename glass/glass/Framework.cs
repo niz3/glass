@@ -324,5 +324,25 @@ namespace glass.config {
 			}
 			
 		}
+		public static void SetUp() {
+			RegistryKey regConfig=Registry.CurrentUser.CreateSubKey("Software\\"+app.name);
+			RegistryKey regUsers=regConfig.CreateSubKey("Users");
+			if(!Directory.Exists(app.confdir+@"\images")) {
+				Directory.CreateDirectory(app.confdir);
+				Directory.CreateDirectory(app.confdir+@"\images");
+			}
+			if(Convert.ToInt32(regConfig.GetValue("WebCamId",-1))==-1) {
+				Dialog.WebcamSetup frmWebcamSetup = new glass.Dialog.WebcamSetup();
+				frmWebcamSetup.ShowDialog();
+				int index=Convert.ToInt32(((DomainUpDown)frmWebcamSetup.Controls.Find("dmnIndex",true)[0]).Text);
+				int w=Convert.ToInt32(((DomainUpDown)frmWebcamSetup.Controls.Find("dmnWidth",true)[0]).Text);
+				int h=Convert.ToInt32(((DomainUpDown)frmWebcamSetup.Controls.Find("dmnHeight",true)[0]).Text);
+				int bpp=Convert.ToInt32(((DomainUpDown)frmWebcamSetup.Controls.Find("dmnBpp",true)[0]).Text);
+				regConfig.SetValue("WebCamId", index);
+				regConfig.SetValue("WebCamWidth", w);
+				regConfig.SetValue("WebCamHeight", h);
+				regConfig.SetValue("WebCamBpp", bpp);
+			}
+		}
 	}
 }
