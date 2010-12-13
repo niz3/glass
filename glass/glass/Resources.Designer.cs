@@ -116,6 +116,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap done {
+			get {
+				object obj = ResourceManager.GetObject("done", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap down {
 			get {
 				object obj = ResourceManager.GetObject("down", resourceCulture);
@@ -130,9 +137,16 @@ namespace glass {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap Klar {
+		internal static System.Drawing.Bitmap frukt_apple {
 			get {
-				object obj = ResourceManager.GetObject("Klar", resourceCulture);
+				object obj = ResourceManager.GetObject("frukt_apple", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_banan {
+			get {
+				object obj = ResourceManager.GetObject("frukt_banan", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -144,9 +158,9 @@ namespace glass {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap Plate {
+		internal static System.Drawing.Bitmap plate {
 			get {
-				object obj = ResourceManager.GetObject("Plate", resourceCulture);
+				object obj = ResourceManager.GetObject("plate", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}

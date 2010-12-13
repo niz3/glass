@@ -51,7 +51,8 @@ namespace glass {
 			Dialog.WebcamDialog frmWebcam=new Dialog.WebcamDialog();
 			frmWebcam.ShowDialog(this);
 			if(frmWebcam.b!=null) {
-				Framework.AddUser("",frmWebcam.b, Difficulty.easy ,0);
+				
+				Framework.AddUser("",frmWebcam.b,Difficulty.easy ,0);
 				PictureBox pct=new PictureBox();
 				pct.Image=frmWebcam.b;
 				pct.Dock=DockStyle.Fill;

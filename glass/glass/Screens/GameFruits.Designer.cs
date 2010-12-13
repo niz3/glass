@@ -65,7 +65,7 @@ namespace glass.Screens
 			// picKlar
 			// 
 			this.picKlar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.picKlar.Image = global::glass.Resources.Klar;
+			this.picKlar.Image = global::glass.Resources.done;
 			this.picKlar.Location = new System.Drawing.Point(0, 0);
 			this.picKlar.Name = "picKlar";
 			this.picKlar.Size = new System.Drawing.Size(32, 32);

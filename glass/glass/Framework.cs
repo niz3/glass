@@ -299,10 +299,9 @@ namespace glass.config {
 			u.SetValue("image",Convert.ToString(ul.id)+".png");
 			u.SetValue("name",ul.name);
 			u.SetValue("difficulty",Convert.ToInt32(ul.difficulty));
-			u.SetValue("score",ul.score);
+			u.SetValue("score",Convert.ToInt32(ul.score));
 		}
-		public static void UpdateScore(int id) {
-			UserList ul=Users[id];
+		public static void UpdateScore(UserList ul) {
 			RegistryKey reg=Registry.CurrentUser.OpenSubKey("Software\\"+app.name,true);
 			RegistryKey regUsers=reg.OpenSubKey("Users",true);
 			RegistryKey u=regUsers.CreateSubKey(ul.id.ToString("000"));
@@ -319,8 +318,8 @@ namespace glass.config {
 				RegistryKey u = regUsers.OpenSubKey(s);
 				UserList temp = new UserList();
 				temp.id=(int)u.GetValue("id",Users.Count);temp.picture=new Bitmap(app.confdir+"\\images\\"+(string)u.GetValue("image",""));temp.difficulty=(Difficulty)u.GetValue("difficulty",Difficulty.easy);temp.name=(string)u.GetValue("name","");
-				int iii=(int)u.GetValue("score",0);
-				temp.score=Convert.ToUInt32(iii);
+				uint iii=Convert.ToUInt32(u.GetValue("score",0));
+				temp.score=iii;
 				Users.Insert(temp.id,temp);
 			}
 			
