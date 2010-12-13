@@ -37,14 +37,20 @@ namespace glass.Screens
 			this.picPrepositions = new System.Windows.Forms.PictureBox();
 			this.picFruits = new System.Windows.Forms.PictureBox();
 			this.picBack = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
 			this.PicColors = new System.Windows.Forms.PictureBox();
+=======
 			this.picClothes = new System.Windows.Forms.PictureBox();
+>>>>>>> dylan/master
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picPrepositions)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picFruits)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
+<<<<<<< HEAD
 			((System.ComponentModel.ISupportInitialize)(this.PicColors)).BeginInit();
+=======
 			((System.ComponentModel.ISupportInitialize)(this.picClothes)).BeginInit();
+>>>>>>> dylan/master
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -55,8 +61,11 @@ namespace glass.Screens
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.Controls.Add(this.PicColors, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.picPrepositions, 0, 0);
+<<<<<<< HEAD
 			this.tableLayoutPanel1.Controls.Add(this.picFruits, 1, 0);
+=======
 			this.tableLayoutPanel1.Controls.Add(this.picClothes, 2, 0);
+>>>>>>> dylan/master
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 50);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
@@ -102,8 +111,9 @@ namespace glass.Screens
 			this.picBack.TabIndex = 4;
 			this.picBack.TabStop = false;
 			this.picBack.Click += new System.EventHandler(this.PicBackClick);
-			//
-			// picClothes
+			// 
+<<<<<<< HEAD
+			// PicColors
 			// 
 			this.PicColors.BackColor = System.Drawing.Color.Yellow;
 			this.PicColors.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -115,9 +125,9 @@ namespace glass.Screens
 			this.PicColors.TabIndex = 2;
 			this.PicColors.TabStop = false;
 			this.PicColors.Click += new System.EventHandler(this.PicColorsClick);
+=======
+			// picClothes
 			// 
-			// PicColors
-			//
 			this.picClothes.BackColor = System.Drawing.Color.Purple;
 			this.picClothes.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picClothes.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -127,6 +137,7 @@ namespace glass.Screens
 			this.picClothes.TabIndex = 1;
 			this.picClothes.TabStop = false;
 			this.picClothes.Click += new System.EventHandler(this.PicClothesClick);
+>>>>>>> dylan/master
 			// 
 			// MainMenuScreen
 			// 
@@ -146,13 +157,18 @@ namespace glass.Screens
 			((System.ComponentModel.ISupportInitialize)(this.picPrepositions)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picFruits)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
+<<<<<<< HEAD
 			((System.ComponentModel.ISupportInitialize)(this.PicColors)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.picClothes)).EndInit();
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.PictureBox PicColors;
 		private System.Windows.Forms.PictureBox picFruits;
+=======
+			((System.ComponentModel.ISupportInitialize)(this.picClothes)).EndInit();
+			this.ResumeLayout(false);
+		}
 		private System.Windows.Forms.PictureBox picClothes;
+>>>>>>> dylan/master
 		private System.Windows.Forms.PictureBox picPrepositions;
 		private System.Windows.Forms.PictureBox picBack;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
