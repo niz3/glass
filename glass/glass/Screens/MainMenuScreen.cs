@@ -19,18 +19,26 @@ namespace glass.Screens {
 		}
 		
 		void PicPrepositionsClick(object sender, EventArgs e) {
+			SetDifficulty();
 			GamePrepositions frmGamePrepositions=new GamePrepositions();
 			frmGamePrepositions.Show(this);
 		}
 		
 		void PicFruitsClick(object sender, EventArgs e){
+			SetDifficulty();
 			GameFruits frmGameFruits=new GameFruits();
 			frmGameFruits.Show(this);
 		}
 		
 		void PicColorsClick(object sender, EventArgs e){
+			SetDifficulty();
 			GameFarger frmGameFarger=new GameFarger();
 			frmGameFarger.Show();
+		}
+		void SetDifficulty() {
+			Dialog.DifficultyDialog frmDifficultyDialog=new glass.Dialog.DifficultyDialog();
+			frmDifficultyDialog.ShowDialog();
+			config.Config.LoggedInUser.difficulty=frmDifficultyDialog.Difficulty;
 		}
 	}
 }

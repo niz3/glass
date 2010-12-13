@@ -59,6 +59,7 @@ namespace glass {
 				resourceCulture = value;
 			}
 		}
+		
 		internal static System.Drawing.Bitmap Äpple {
 			get {
 				object obj = ResourceManager.GetObject("Äpple", resourceCulture);
@@ -72,7 +73,8 @@ namespace glass {
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
-internal static System.Drawing.Bitmap bil_bla {
+		
+		internal static System.Drawing.Bitmap bil_bla {
 			get {
 				object obj = ResourceManager.GetObject("bil_bla", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
@@ -93,8 +95,6 @@ internal static System.Drawing.Bitmap bil_bla {
 			}
 		}
 		
-
-
 		internal static System.Drawing.Bitmap boll_fotboll {
 			get {
 				object obj = ResourceManager.GetObject("boll_fotboll", resourceCulture);

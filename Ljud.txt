@@ -1,0 +1,13 @@
+Bild:Tryck på knappen för att ta en bild
+Meny:Tryck på ett spel för att starta det
+Meny:Tryck på din bild eller ??????
+
+Fruktspel:Dra frukterna till tallrikarna så alla får lika många, tryck sedan på den gröna knappen.
+
+Färgspel:Klicka på (den|det) (röda|blåa|gröna|gula|rosa|lila|vita|svarta|bruna) (huset|bilen|boll|fyrkanten|stocken)
+
+Klädspel:Klä på gubben
+
+Saker: Lägg (bollen|kameran|bilen|äpplet|bananen) (på border|under bordet|på stolen|på översta hyllan|på understa hyllan|
+	på hyllan i mitten|mellan bokhyllan och stolen|i bokhyllan)
+

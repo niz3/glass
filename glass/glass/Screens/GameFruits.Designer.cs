@@ -71,6 +71,7 @@ namespace glass.Screens
 			this.picKlar.Size = new System.Drawing.Size(32, 32);
 			this.picKlar.TabIndex = 0;
 			this.picKlar.TabStop = false;
+			this.picKlar.Click += new System.EventHandler(this.PicKlarClick);
 			// 
 			// GameFruits
 			// 
