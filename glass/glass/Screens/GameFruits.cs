@@ -149,7 +149,11 @@ namespace glass.Screens
 			}
 			if(Config.LoggedInUser.difficulty== Difficulty.easy) {
 				if(f1[t1]==(((Fruits.Count/2)<<0)+(((Fruits.Count/2)<<1)))) {
-					MessageBox.Show("du vannnnannanananannas");
+					if((Config.LoggedInUser.score&((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty)) {
+			   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty;
+			   			Config.UpdateScore(Config.LoggedInUser);
+			   		}
+					MessageBox.Show(Config.LoggedInUser.score.ToString());
 					this.Close();
 				}
 			}else{
@@ -162,7 +166,11 @@ namespace glass.Screens
 				
 				//MessageBox.Show(ppp[t1].ToString()+" "+ppp[t2].ToString());
 				if(f1[t1]==ppp[t1]&&f1[t2]==ppp[t2]) {
-					MessageBox.Show("du vannnnannanananannas");
+					if((Config.LoggedInUser.score&((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty)) {
+			   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty;
+			   			Config.UpdateScore(Config.LoggedInUser);
+			   		}
+					MessageBox.Show(Config.LoggedInUser.score.ToString());
 					this.Close();
 				}
 			}
