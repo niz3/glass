@@ -35,7 +35,8 @@ namespace glass.Screens
 			Dialog.YesNoDialog AreYouSure =new glass.Dialog.YesNoDialog();
 			AreYouSure.ShowDialog();
 			if(AreYouSure.Answer){
-				this.Close();}
+				this.Close();
+			}
 		}
 	}
 }

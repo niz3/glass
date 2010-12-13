@@ -116,6 +116,41 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap hus_brun {
+			get {
+				object obj = ResourceManager.GetObject("hus_brun", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_gul {
+			get {
+				object obj = ResourceManager.GetObject("hus_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rodprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_rodprick", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rosa {
+			get {
+				object obj = ResourceManager.GetObject("hus_rosa", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_vitprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_vitprick", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap new_user {
 			get {
 				object obj = ResourceManager.GetObject("new_user", resourceCulture);
