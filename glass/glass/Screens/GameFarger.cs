@@ -9,6 +9,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using glass.framework;
 
 namespace glass.Screens
 {
@@ -22,29 +23,24 @@ namespace glass.Screens
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
+			int farg;
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
-		}
-		
-		void PictureBox2Click(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void PictureBox1Click(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void TextBox1TextChanged(object sender, EventArgs e)
-		{
+			farg = Framework.rndInt(1,3);
+			MessageBox.Show(farg.ToString());
+			}
+			void PictureBox1Click(object sender, EventArgs e)
+			{
+				MessageBox.Show("bra jobbat");
+			}
+			void PicBackClick(object sender, EventArgs e) {
+				Dialog.YesNoDialog AreYouSure =new glass.Dialog.YesNoDialog();
+				AreYouSure.ShowDialog();
+				if(AreYouSure.Answer){
+					this.Close(); }
 			
 		}
 		
-		void Label1Click(object sender, EventArgs e)
+		void PictureBox3Click(object sender, EventArgs e)
 		{
 			
 		}

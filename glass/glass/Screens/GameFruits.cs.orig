@@ -27,8 +27,8 @@ namespace glass.Screens
 			paron,
 		};
 		Bitmap[] fruitImg=new Bitmap[] {
-			global::glass.Resources.Banan,
-			global::glass.Resources.Äpple,
+			global::glass.Resources.frukt_banan,
+			global::glass.Resources.frukt_apple,
 			global::glass.Resources.bil_bla,
 			global::glass.Resources.boll_fotboll,
 		};
@@ -53,55 +53,22 @@ namespace glass.Screens
 		private bool dragging=false;
 		public GameFruits(){
 			InitializeComponent();
-<<<<<<< HEAD
 			for(int i=0;i<((int)Config.LoggedInUser.difficulty)+2;i++) {
 				plate[i]=new DrawableItems();
 				plate[i].Parent=drawArea1;
-				plate[i].Image=global::glass.Resources.Plate;
+				plate[i].Image=global::glass.Resources.plate;
 				plate[i].Bounds=platePositions[i];
 				drawArea1.Items.Add(plate[i]);
 			}
 			SpawnItems();
 			}
-=======
-			DrawableItems d=new DrawableItems();
-			d.Parent=drawArea1;
-			d.Image=global::glass.Resources.plate;
-			d.Bounds=new Rectangle(0,300,250,250);
-			drawArea1.Items.Add(d);
-			
-			DrawableItems fuu=new DrawableItems();
-			
-			fuu.Parent=drawArea1;
-			fuu.Image=global::glass.Resources.plate;
-			fuu.Bounds=new Rectangle(550,300,250,250);
-			drawArea1.Items.Add(fuu);
-			
-			DrawableItems apple=new DrawableItems();
-			apple.MouseDown+=new DrawableItems.ItemMouseEventHandler(ClickMovable);
-			apple.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
-			apple.Parent=drawArea1;
-			apple.Image=global::glass.Resources.frukt_apple;
-			apple.Bounds=new Rectangle(300,300,100,100);
-			drawArea1.Items.Add(apple);
-			
-			DrawableItems banan=new DrawableItems();
-			banan.MouseDown+=new DrawableItems.ItemMouseEventHandler(ClickMovable);
-			banan.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
-			banan.Parent=drawArea1;
-			banan.Image=global::glass.Resources.frukt_banan;
-			banan.Bounds=new Rectangle(200,200,100,67);
-			drawArea1.Items.Add(banan);
-			
-			
-		}
->>>>>>> axel/master
 		void PicBackClick(object sender, EventArgs e){
 			Dialog.YesNoDialog AreYouSure =new glass.Dialog.YesNoDialog();
 			AreYouSure.ShowDialog();
 			if(AreYouSure.Answer){
 				this.Close();
 			}
+<<<<<<< HEAD
 		}
 		
 		private void ClickMovable(DrawableItems sender, MouseEventArgs e) {
@@ -200,6 +167,8 @@ namespace glass.Screens
 					this.Close();
 				}
 			}
+=======
+>>>>>>> max/master
 		}
 	}
 }

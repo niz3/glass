@@ -133,6 +133,21 @@ namespace glass {
 		internal static System.Drawing.Bitmap frukt_banan {
 			get {
 				object obj = ResourceManager.GetObject("frukt_banan", resourceCulture);
+				object obj = ResourceManager.GetObject("hus_rodprick", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rosa {
+			get {
+				object obj = ResourceManager.GetObject("hus_rosa", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_vitprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_vitprick", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
