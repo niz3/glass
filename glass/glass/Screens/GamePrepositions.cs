@@ -61,6 +61,8 @@ namespace glass.Screens {
 		private Items[] ItemCollection={
 			new Items("fotboll", "en", global::glass.Resources.boll_fotboll),
 			new Items("kamera", "n", global::glass.Resources.camera),
+			new Items("äpple", "t", global::glass.Resources.frukt_apple),
+			new Items("bil", "en", global::glass.Resources.bil_rod),
 		};
 		private Dictionary<Difficulty, Places[]> PlaceCollection=new Dictionary<Difficulty, Places[]>{
 			{Difficulty.easy,
@@ -116,8 +118,7 @@ namespace glass.Screens {
 					   	if(correct>=total) {
 					   		if((Config.LoggedInUser.score&((int)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty)) {
 					   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty;
-					   			MessageBox.Show(Config.LoggedInUser.score.ToString());
-					   			Config.UpdateScore(Config.LoggedInUser.id);
+					   			Config.UpdateScore(Config.LoggedInUser);
 					   		}
 					   		MessageBox.Show("Bra jobbat!");
 					   		this.Close();

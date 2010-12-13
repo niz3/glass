@@ -26,14 +26,14 @@ namespace glass.Screens
 			InitializeComponent();
 			DrawableItems d=new DrawableItems();
 			d.Parent=drawArea1;
-			d.Image=global::glass.Resources.Plate;
+			d.Image=global::glass.Resources.plate;
 			d.Bounds=new Rectangle(0,300,250,250);
 			drawArea1.Items.Add(d);
 			
 			DrawableItems fuu=new DrawableItems();
 			
 			fuu.Parent=drawArea1;
-			fuu.Image=global::glass.Resources.Plate;
+			fuu.Image=global::glass.Resources.plate;
 			fuu.Bounds=new Rectangle(550,300,250,250);
 			drawArea1.Items.Add(fuu);
 			
@@ -41,7 +41,7 @@ namespace glass.Screens
 			apple.MouseDown+=new DrawableItems.ItemMouseEventHandler(ClickMovable);
 			apple.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 			apple.Parent=drawArea1;
-			apple.Image=global::glass.Resources.Äpple;
+			apple.Image=global::glass.Resources.frukt_apple;
 			apple.Bounds=new Rectangle(300,300,100,100);
 			drawArea1.Items.Add(apple);
 			
@@ -49,7 +49,7 @@ namespace glass.Screens
 			banan.MouseDown+=new DrawableItems.ItemMouseEventHandler(ClickMovable);
 			banan.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 			banan.Parent=drawArea1;
-			banan.Image=global::glass.Resources.Banan;
+			banan.Image=global::glass.Resources.frukt_banan;
 			banan.Bounds=new Rectangle(200,200,100,67);
 			drawArea1.Items.Add(banan);
 			
@@ -59,7 +59,8 @@ namespace glass.Screens
 			Dialog.YesNoDialog AreYouSure =new glass.Dialog.YesNoDialog();
 			AreYouSure.ShowDialog();
 			if(AreYouSure.Answer){
-				this.Close();}
+				this.Close();
+			}
 		}
 		
 		private void ClickMovable(DrawableItems sender, MouseEventArgs e) {

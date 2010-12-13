@@ -59,20 +59,8 @@ namespace glass {
 				resourceCulture = value;
 			}
 		}
-		internal static System.Drawing.Bitmap Äpple {
-			get {
-				object obj = ResourceManager.GetObject("Äpple", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
 		
-		internal static System.Drawing.Bitmap Banan {
-			get {
-				object obj = ResourceManager.GetObject("Banan", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-internal static System.Drawing.Bitmap bil_bla {
+		internal static System.Drawing.Bitmap bil_bla {
 			get {
 				object obj = ResourceManager.GetObject("bil_bla", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
@@ -93,8 +81,6 @@ internal static System.Drawing.Bitmap bil_bla {
 			}
 		}
 		
-
-
 		internal static System.Drawing.Bitmap boll_fotboll {
 			get {
 				object obj = ResourceManager.GetObject("boll_fotboll", resourceCulture);
@@ -116,6 +102,13 @@ internal static System.Drawing.Bitmap bil_bla {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap done {
+			get {
+				object obj = ResourceManager.GetObject("done", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap down {
 			get {
 				object obj = ResourceManager.GetObject("down", resourceCulture);
@@ -130,9 +123,16 @@ internal static System.Drawing.Bitmap bil_bla {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap Klar {
+		internal static System.Drawing.Bitmap frukt_apple {
 			get {
-				object obj = ResourceManager.GetObject("Klar", resourceCulture);
+				object obj = ResourceManager.GetObject("frukt_apple", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_banan {
+			get {
+				object obj = ResourceManager.GetObject("frukt_banan", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -144,9 +144,9 @@ internal static System.Drawing.Bitmap bil_bla {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap Plate {
+		internal static System.Drawing.Bitmap plate {
 			get {
-				object obj = ResourceManager.GetObject("Plate", resourceCulture);
+				object obj = ResourceManager.GetObject("plate", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
