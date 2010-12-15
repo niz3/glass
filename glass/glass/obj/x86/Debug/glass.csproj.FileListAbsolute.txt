@@ -59,3 +59,4 @@ D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.pdb
 C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Screens.GameFarger.resources
 C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Screens.GameFruits.resources
 D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Debug\glass.Screens.GameFarger.resources
+D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.Screens.GameFarger.resources

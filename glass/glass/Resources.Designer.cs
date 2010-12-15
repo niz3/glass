@@ -137,16 +137,37 @@ namespace glass {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap frukt_bappelsin {
+		internal static System.Drawing.Bitmap hus_brun {
 			get {
-				object obj = ResourceManager.GetObject("frukt_bappelsin", resourceCulture);
+				object obj = ResourceManager.GetObject("hus_brun", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
 		
-		internal static System.Drawing.Bitmap frukt_paron {
+		internal static System.Drawing.Bitmap hus_gul {
 			get {
-				object obj = ResourceManager.GetObject("frukt_paron", resourceCulture);
+				object obj = ResourceManager.GetObject("hus_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rodprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_rodprick", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rosa {
+			get {
+				object obj = ResourceManager.GetObject("hus_rosa", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_vitprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_vitprick", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -161,13 +182,6 @@ namespace glass {
 		internal static System.Drawing.Bitmap plate {
 			get {
 				object obj = ResourceManager.GetObject("plate", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap rum_frukter {
-			get {
-				object obj = ResourceManager.GetObject("rum_frukter", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
