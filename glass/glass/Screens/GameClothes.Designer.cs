@@ -36,12 +36,47 @@ namespace glass.Screens
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.picBack = new System.Windows.Forms.PictureBox();
+			this.drawArea1 = new glass.framework.DrawArea();
+			((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// picBack
+			// 
+			this.picBack.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.picBack.Image = global::glass.Resources.exit;
+			this.picBack.Location = new System.Drawing.Point(768, 0);
+			this.picBack.Name = "picBack";
+			this.picBack.Size = new System.Drawing.Size(32, 32);
+			this.picBack.TabIndex = 0;
+			this.picBack.TabStop = false;
+			this.picBack.Click += new System.EventHandler(this.PicBackClick);
+			// 
+			// drawArea1
+			// 
+			this.drawArea1.BackColor = System.Drawing.Color.Purple;
+			this.drawArea1.Location = new System.Drawing.Point(0, 32);
+			this.drawArea1.Name = "drawArea1";
+			this.drawArea1.Size = new System.Drawing.Size(800, 570);
+			this.drawArea1.TabIndex = 1;
 			// 
 			// GameClothes
 			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Text = "GameClothes";
+			this.ClientSize = new System.Drawing.Size(800, 600);
+			this.Controls.Add(this.drawArea1);
+			this.Controls.Add(this.picBack);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "GameClothes";
+			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "GameClothes";
+			this.TopMost = true;
+			((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
+			this.ResumeLayout(false);
 		}
+		private glass.framework.DrawArea drawArea1;
+		private System.Windows.Forms.PictureBox picBack;
 	}
 }

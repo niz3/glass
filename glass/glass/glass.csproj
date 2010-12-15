@@ -55,6 +55,10 @@
     <Compile Include="Dialog\DiffucultyDialog.Designer.cs">
       <DependentUpon>DiffucultyDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\WebcamSetup.cs" />
+    <Compile Include="Dialog\WebcamSetup.Designer.cs">
+      <DependentUpon>WebcamSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\YesNoDialog.cs" />
     <Compile Include="Dialog\YesNoDialog.Designer.cs">
       <DependentUpon>YesNoDialog.cs</DependentUpon>
@@ -82,6 +86,9 @@
     <Compile Include="Screens\GameFruits.cs" />
     <Compile Include="Screens\GameFruits.Designer.cs">
       <DependentUpon>GameFruits.cs</DependentUpon>
+    <Compile Include="Screens\GameClothes.cs" />
+    <Compile Include="Screens\GameClothes.Designer.cs">
+      <DependentUpon>GameClothes.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\GamePrepositions.cs" />
     <Compile Include="Screens\GamePrepositions.Designer.cs">
@@ -108,6 +115,9 @@
     <EmbeddedResource Include="Dialog\WebcamDialog.resx">
       <DependentUpon>WebcamDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\WebcamSetup.resx">
+      <DependentUpon>WebcamSetup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\YesNoDialog.resx">
       <DependentUpon>YesNoDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +129,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\GameFruits.resx">
       <DependentUpon>GameFruits.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\GameClothes.resx">
+      <DependentUpon>GameClothes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\GamePrepositions.resx">
       <DependentUpon>GamePrepositions.cs</DependentUpon>
