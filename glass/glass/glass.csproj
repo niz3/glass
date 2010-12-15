@@ -86,10 +86,7 @@
     <Compile Include="Screens\GameFruits.cs" />
     <Compile Include="Screens\GameFruits.Designer.cs">
       <DependentUpon>GameFruits.cs</DependentUpon>
-    <Compile Include="Screens\GameClothes.cs" />
-    <Compile Include="Screens\GameClothes.Designer.cs">
-      <DependentUpon>GameClothes.cs</DependentUpon>
-    </Compile>
+	</Compile>
     <Compile Include="Screens\GamePrepositions.cs" />
     <Compile Include="Screens\GamePrepositions.Designer.cs">
       <DependentUpon>GamePrepositions.cs</DependentUpon>
@@ -129,6 +126,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\GameFruits.resx">
       <DependentUpon>GameFruits.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="Screens\GameClothes.resx">
       <DependentUpon>GameClothes.cs</DependentUpon>
     </EmbeddedResource>

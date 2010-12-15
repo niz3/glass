@@ -102,6 +102,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap byxor_bla_1 {
+			get {
+				object obj = ResourceManager.GetObject("byxor_bla_1", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap byxor_gron {
 			get {
 				object obj = ResourceManager.GetObject("byxor_gron", resourceCulture);
@@ -138,14 +145,6 @@ namespace glass {
 		}
 		
 		internal static System.Drawing.Bitmap down {
-		internal static System.Drawing.Bitmap frukt_banan {
-			get {
-				object obj = ResourceManager.GetObject("frukt_banan", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		internal static System.Drawing.Bitmap hus_brun {
 			get {
 				object obj = ResourceManager.GetObject("down", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
@@ -155,6 +154,90 @@ namespace glass {
 		internal static System.Drawing.Bitmap exit {
 			get {
 				object obj = ResourceManager.GetObject("exit", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_apple {
+			get {
+				object obj = ResourceManager.GetObject("frukt_apple", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_apple_1 {
+			get {
+				object obj = ResourceManager.GetObject("frukt_apple_1", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_banan {
+			get {
+				object obj = ResourceManager.GetObject("frukt_banan", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_banan_1 {
+			get {
+				object obj = ResourceManager.GetObject("frukt_banan_1", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_bappelsin {
+			get {
+				object obj = ResourceManager.GetObject("frukt_bappelsin", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_paron {
+			get {
+				object obj = ResourceManager.GetObject("frukt_paron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap gubbe {
+			get {
+				object obj = ResourceManager.GetObject("gubbe", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_brun {
+			get {
+				object obj = ResourceManager.GetObject("hus_brun", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_gul {
+			get {
+				object obj = ResourceManager.GetObject("hus_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rodprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_rodprick", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_rosa {
+			get {
+				object obj = ResourceManager.GetObject("hus_rosa", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap hus_vitprick {
+			get {
+				object obj = ResourceManager.GetObject("hus_vitprick", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
