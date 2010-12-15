@@ -137,6 +137,20 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap frukt_bappelsin {
+			get {
+				object obj = ResourceManager.GetObject("frukt_bappelsin", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap frukt_paron {
+			get {
+				object obj = ResourceManager.GetObject("frukt_paron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap hus_brun {
 			get {
 				object obj = ResourceManager.GetObject("hus_brun", resourceCulture);
@@ -182,6 +196,13 @@ namespace glass {
 		internal static System.Drawing.Bitmap plate {
 			get {
 				object obj = ResourceManager.GetObject("plate", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap rum_frukter {
+			get {
+				object obj = ResourceManager.GetObject("rum_frukter", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
