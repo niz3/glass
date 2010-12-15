@@ -25,6 +25,7 @@ namespace glass.Screens {
 		}
 		
 		void PicClothesClick(object sender, EventArgs e){
+			SetDifficulty();
 			GameClothes frmGameClothes=new GameClothes();
 			frmGameClothes.Show();
 		}
