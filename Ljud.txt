@@ -1,13 +1,17 @@
-Bild:Tryck på knappen för att ta en bild
-Meny:Tryck på ett spel för att starta det
-Meny:Tryck på din bild eller ??????
+Bild:Klicka på kameran för att ta en bild
+Meny:Klicka på ett spel för att starta det
+Meny:Klicka på din bild för att starta. Om du är ny här, klicka på den tomma bilden.
 
-Fruktspel:Dra frukterna till tallrikarna så alla får lika många, tryck sedan på den gröna knappen.
+Fruktspel:Flytta frukterna till tallrikarna så alla får lika många, tryck sedan på den gröna knappen.
+Du är inteklar än. Det är inte lika många frukter på alla talrikar.
 
-Färgspel:Klicka på (den|det) (röda|blåa|gröna|gula|rosa|lila|vita|svarta|bruna) (huset|bilen|boll|fyrkanten|stocken)
+Färgspel:Klicka på (den|det) (röda|blåa|gröna|gula|rosa|bruna|rödprickiga|vitprickiga|gulrandiga|rödrandiga) 
+(huset|bilen|boll|fyrkanten)
 
-Klädspel:Klä på gubben
+Klädspel:Tröja, byxor, mössa, strumpor, t-shirt, jacka, 
 
-Saker: Lägg (bollen|kameran|bilen|äpplet|bananen) (på border|under bordet|på stolen|på översta hyllan|på understa hyllan|
+Saker: Lägg (bollen|kameran|bilen|äpplet|bananen) (på bordet|under bordet|på stolen|på översta hyllan|på understa hyllan|
 	på hyllan i mitten|mellan bokhyllan och stolen|i bokhyllan)
+
+Bra jobbat!
 
