@@ -94,6 +94,7 @@ namespace glass.Screens
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "GamePrepositions";
 			this.TopMost = true;
+			this.Shown += new System.EventHandler(this.GamePrepositionsShown);
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
 			this.ResumeLayout(false);
 		}
