@@ -22,6 +22,7 @@ namespace glass {
 		}
 		
 		void MainFormLoad(object sender, EventArgs e){
+			Config.SetUp();
 			Config.LoadConfig();
 			Form frmLogin = new LoginForm();
 			frmLogin.ShowDialog(this);

@@ -24,6 +24,11 @@ namespace glass.Screens {
 			frmGamePrepositions.Show(this);
 		}
 		
+		void PicClothesClick(object sender, EventArgs e){
+			SetDifficulty();
+			GameClothes frmGameClothes=new GameClothes();
+			frmGameClothes.Show();
+		}
 		void PicFruitsClick(object sender, EventArgs e){
 			SetDifficulty();
 			GameFruits frmGameFruits=new GameFruits();
@@ -39,12 +44,6 @@ namespace glass.Screens {
 			Dialog.DifficultyDialog frmDifficultyDialog=new glass.Dialog.DifficultyDialog();
 			frmDifficultyDialog.ShowDialog();
 			config.Config.LoggedInUser.difficulty=frmDifficultyDialog.Difficulty;
-		}
-		
-		void PicClothesClick(object sender, EventArgs e) {
-			SetDifficulty();
-			GameClothes frmGameClothes = new GameClothes();
-			frmGameClothes.ShowDialog(this);
 		}
 	}
 }

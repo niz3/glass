@@ -20,34 +20,70 @@ namespace glass.Screens
 	/// </summary>
 	/// 
 	
-	struct ClothPlaces {
-		private string name;
-		private Point[] poly;
-		public string Name {
-			get{return(name);}
-			set{name=value;}
-		}
-		public Point[] Polygon {
-			get{return(poly);}
-			set{poly=value;}
-		}
-		public ClothPlaces(string n, Point[] p) {
-			name=n;
-			poly=p;
-		}
-	};
-	
-	public partial class GameClothes : Form
-	{
+	partial class GameClothes : Form {
+		struct ClothPlaces {
+			private string name;
+			private Point[] poly;
+			public string Name {
+				get{return(name);}
+				set{name=value;}
+			}
+			public Point[] Polygon {
+				get{return(poly);}
+				set{poly=value;}
+			}
+			public ClothPlaces(string n, Point[] p) {
+				name=n;
+				poly=p;
+			}
+		};
+		
+		private ClothPlaces goal;
+		//private Bitmap current;
+		
+		Bitmap[] trojor=new Bitmap[] {
+			global::glass.Resources.troja_bla,
+			global::glass.Resources.troja_rod,
+			global::glass.Resources.troja_gron,
+			global::glass.Resources.troja_gul,
+		};
+		Bitmap[] byxor=new Bitmap[] {
+			global::glass.Resources.byxa_bla,
+			global::glass.Resources.byxa_rod,
+			global::glass.Resources.byxa_gron,
+			global::glass.Resources.byxa_gul,
+		};
+		Bitmap[] mossor=new Bitmap[] {
+			global::glass.Resources.mossa_bla,
+			global::glass.Resources.mossa_rod,
+			global::glass.Resources.mossa_gron,
+			global::glass.Resources.mossa_gul,
+		};
+		Bitmap[] strumpor=new Bitmap[] {
+			global::glass.Resources.strumpa_bla,
+			global::glass.Resources.strumpa_rod,
+			global::glass.Resources.strumpa_gron,
+			global::glass.Resources.strumpa_gul,
+		};
+		Bitmap[] tshirts=new Bitmap[] {
+			global::glass.Resources.t_bla,
+			global::glass.Resources.t_rod,
+			global::glass.Resources.t_gron,
+			global::glass.Resources.t_gul,
+		};
+		Bitmap[] jackor=new Bitmap[] {
+			global::glass.Resources.jacka_bla,
+			global::glass.Resources.jacka_rod,
+			global::glass.Resources.jacka_gron,
+			global::glass.Resources.jacka_gul,
+		};
 		bool dragging;
 		Point offset;
-		private List<ClothPlaces[]> PlaceCollection =new List<ClothPlaces[]>{
-			new ClothPlaces[]{
-				new ClothPlaces("troja",new Point[] {new Point(5,137), new Point(296,257), new Point(5,291), new Point(504,400)}),
-				new ClothPlaces("byxor",new Point[] {new Point(7,320), new Point(293,320), new Point(7,496), new Point(298,478)}),
-				new ClothPlaces("strumpor",new Point[] {new Point(463,373), new Point(508,380), new Point(480,410), new Point(417,401)}),
-				new ClothPlaces("mossa",new Point[] {new Point(252,54), new Point(374,-23), new Point(375,324), new Point(248,428)}),
-			}
+		ClothPlaces[] PlaceCollection = new ClothPlaces[]{
+			new ClothPlaces("troja",new Point[] {new Point(268,117), new Point(536-236,117), new Point(536-236,326-185), new Point(268,326-185)}),
+			new ClothPlaces("byxor",new Point[] {new Point(275,298), new Point(516-213,298), new Point(516-213,500-178), new Point(276,500-178)}),
+			new ClothPlaces("strumpor",new Point[] {new Point(251,446), new Point(549-274,446), new Point(549-274,503-38), new Point(251,503-38)}),
+			new ClothPlaces("mossa",new Point[] {new Point(336,10), new Point(456-87,10), new Point(456-87,110-60), new Point(336,110-60)}),
 		};
 		public GameClothes()
 		{
@@ -55,7 +91,7 @@ namespace glass.Screens
 			DrawableItems d=new DrawableItems();
 			d.Parent=drawArea1;
 			d.Image=global::glass.Resources.gubbe;
-			d.Bounds=new Rectangle(125,20,280,470);
+			d.Bounds=new Rectangle(250,20,300,500);
 			drawArea1.Items.Add(d);
 			
 			SpawnClothes();
@@ -75,6 +111,14 @@ namespace glass.Screens
 			int y=(int)((sender.Bounds.Y+sender.Bounds.Y+sender.Bounds.Height)/2);
 			sender.Parent.BringItemToFront(sender);
 			dragging=(!dragging)&sender.Enabled;
+			if((!dragging)&&(sender.Enabled)) {
+				MessageBox.Show("omg");
+				foreach (ClothPlaces place in PlaceCollection) {
+					if((place.Name==goal.Name)&&(Framework.PointInPolygon(new Point(x,y),place.Polygon))) {
+						MessageBox.Show("lol");
+					}
+				}
+			}
 		}
 		private void MoveMovable(DrawableItems sender,MouseEventArgs e) {
 			if(dragging&&sender.Enabled) {
@@ -88,61 +132,33 @@ namespace glass.Screens
 			}
 		}
 		void SpawnClothes() {
-			Bitmap[] trojor=new Bitmap[] {
-				global::glass.Resources.troja_bla,
-				global::glass.Resources.troja_rod,
-				global::glass.Resources.troja_gron,
-				global::glass.Resources.troja_gul,
-			};
-			DrawableItems d=new DrawableItems();
-			d.Parent=drawArea1;
-			d.Image=trojor[Framework.rndInt(0,trojor.Length)];
-			d.Bounds=new Rectangle(0,0,200,200);
-			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
-			d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
-			drawArea1.Items.Add(d);
-			
-			Bitmap[] byxor=new Bitmap[] {
-				global::glass.Resources.byxor_bla,
-				global::glass.Resources.byxor_rod,
-				global::glass.Resources.byxor_gron,
-				global::glass.Resources.byxor_gul,
-			};
-			d=new DrawableItems();
-			d.Parent=drawArea1;
-			d.Image=byxor[Framework.rndInt(0,byxor.Length)];
-			d.Bounds=new Rectangle(700,300,200,200);
-			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
-			d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
-			drawArea1.Items.Add(d);
-			
-			Bitmap[] strumpor=new Bitmap[] {
-				global::glass.Resources.strumpa_bla,
-				global::glass.Resources.strumpa_rod,
-				global::glass.Resources.strumpa_gron,
-				global::glass.Resources.strumpa_gul,
-			};
-			d=new DrawableItems();
-			d.Parent=drawArea1;
-			d.Image=strumpor[Framework.rndInt(0,strumpor.Length)];
-			d.Bounds=new Rectangle(50,300,100,100);
-			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
-			d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
-			drawArea1.Items.Add(d);
-			
-			Bitmap[] mossa=new Bitmap[] {
-				global::glass.Resources.mossa_bla,
-				global::glass.Resources.mossa_rod,
-				global::glass.Resources.mossa_gron,
-				global::glass.Resources.mossa_gul,
-			};
-			d=new DrawableItems();
-			d.Parent=drawArea1;
-			d.Image=mossa[Framework.rndInt(0,mossa.Length)];
-			d.Bounds=new Rectangle(600,100,200,200);
-			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
-			d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
-			drawArea1.Items.Add(d);
+			if(Config.LoggedInUser.difficulty==Difficulty.easy) {
+				DrawableItems d=new DrawableItems();
+				d.Parent=drawArea1;
+				d.Image=trojor[Framework.rndInt(0,trojor.Length)];
+				d.Bounds=new Rectangle(0,0,236,185);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				d.Image=byxor[Framework.rndInt(0,byxor.Length)];
+				d.Bounds=new Rectangle(600,100,213,178);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				d.Image=mossor[Framework.rndInt(0,mossor.Length)];
+				d.Bounds=new Rectangle(600,300,87,60);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				goal=PlaceCollection[0];
+			}
 		}
 	}
 }

@@ -8,8 +8,8 @@
  */
 using System;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using glass.framework;
 using glass.config;
 namespace glass.Screens
@@ -29,8 +29,8 @@ namespace glass.Screens
 		Bitmap[] fruitImg=new Bitmap[] {
 			global::glass.Resources.frukt_banan,
 			global::glass.Resources.frukt_apple,
-			global::glass.Resources.bil_bla,
-			global::glass.Resources.boll_fotboll,
+			global::glass.Resources.frukt_bappelsin,
+			global::glass.Resources.frukt_paron,
 		};
 		struct fruit {
 			public DrawableItems Item;
@@ -41,6 +41,7 @@ namespace glass.Screens
 			}
 		};
 		List<fruit> Fruits = new List<GameFruits.fruit>();
+		List<fruit> OddFruits = new List<GameFruits.fruit>();
 		
 		DrawableItems[] plate=new DrawableItems[4];
 		Rectangle[] platePositions=new Rectangle[] {
@@ -92,9 +93,13 @@ namespace glass.Screens
 		private void SpawnItems(){
 			Fruits.Clear();
 			int f1=Framework.rndInt(0,fruitImg.Length);
+			int f3=f1;
 			int f2=f1;
 			while(f2==f1) {
 				f2=Framework.rndInt(0,fruitImg.Length);
+			}
+			while(f3==f1||f3==f2) {
+				f3=Framework.rndInt(0,fruitImg.Length);
 			}
 			t1=f1;t2=f2;
 			if (Config.LoggedInUser.difficulty== Difficulty.easy){
@@ -105,7 +110,7 @@ namespace glass.Screens
 					d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 					d.Parent=drawArea1;
 					d.Image=fruitImg[f1];
-					d.Bounds=new Rectangle(Framework.rndInt(200,400),Framework.rndInt(100,400),100,100);
+					d.Bounds=new Rectangle(Framework.rndInt(250,400),Framework.rndInt(100,400),100,100);
 					Fruits.Add(new fruit(d,(fruitType)f1));
 			     	drawArea1.Items.Add(d);
 				}
@@ -118,7 +123,7 @@ namespace glass.Screens
 					d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 					d.Parent=drawArea1;
 					d.Image=fruitImg[f1];
-					d.Bounds=new Rectangle(Framework.rndInt(200,400),Framework.rndInt(100,400),100,100);
+					d.Bounds=new Rectangle(Framework.rndInt(250,400),Framework.rndInt(100,400),100,100);
 					Fruits.Add(new fruit(d,(fruitType)f1));
 			     	drawArea1.Items.Add(d);
 				}
@@ -129,9 +134,22 @@ namespace glass.Screens
 					d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 					d.Parent=drawArea1;
 					d.Image=fruitImg[f2];
-					d.Bounds=new Rectangle(Framework.rndInt(200,400),Framework.rndInt(100,400),100,100);
+					d.Bounds=new Rectangle(Framework.rndInt(250,400),Framework.rndInt(100,400),100,100);
 					Fruits.Add(new fruit(d,(fruitType)f2));
 			     	drawArea1.Items.Add(d);
+				}
+				if(Config.LoggedInUser.difficulty== Difficulty.hard) {
+					r=Framework.rndInt(1,4);
+					for (int i = 0; i<r;i++) {
+						DrawableItems d=new DrawableItems();
+				     	d.MouseDown+=new DrawableItems.ItemMouseEventHandler(ClickMovable);
+						d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+						d.Parent=drawArea1;
+						d.Image=fruitImg[f3];
+						d.Bounds=new Rectangle(Framework.rndInt(250,400),Framework.rndInt(100,400),100,100);
+						OddFruits.Add(new fruit(d,(fruitType)f3));
+				     	drawArea1.Items.Add(d);
+					}
 				}
 			}
 		}
@@ -149,7 +167,11 @@ namespace glass.Screens
 			}
 			if(Config.LoggedInUser.difficulty== Difficulty.easy) {
 				if(f1[t1]==(((Fruits.Count/2)<<0)+(((Fruits.Count/2)<<1)))) {
-					MessageBox.Show("du vannnnannanananannas");
+					if((Config.LoggedInUser.score&((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty)) {
+			   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty;
+			   			Config.UpdateScore(Config.LoggedInUser);
+			   		}
+					MessageBox.Show("Du vannanananas, Din score är: "+Config.LoggedInUser.score.ToString()+" :D");
 					this.Close();
 				}
 			}else{
@@ -159,10 +181,23 @@ namespace glass.Screens
 					ppp[(int)f.Type]+=(1<<(i%((int)Config.LoggedInUser.difficulty+2)));
 					i++;
 				}
-				
-				//MessageBox.Show(ppp[t1].ToString()+" "+ppp[t2].ToString());
-				if(f1[t1]==ppp[t1]&&f1[t2]==ppp[t2]) {
-					MessageBox.Show("du vannnnannanananannas");
+				bool noodd=true;
+				foreach (fruit f in OddFruits) {
+					for(i=0;i<(((int)Config.LoggedInUser.difficulty+2));i++) {
+						if (f.Item.Bounds.IntersectsWith(plate[i].Bounds)) {
+							noodd=false;
+						}
+					}
+				}
+				if (noodd==false) {
+					MessageBox.Show("fail");
+				}
+				if(f1[t1]==ppp[t1]&&f1[t2]==ppp[t2]&&noodd) {
+					if((Config.LoggedInUser.score&((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty)) {
+			   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty;
+			   			Config.UpdateScore(Config.LoggedInUser);
+			   		}
+					MessageBox.Show("Du vannanananas, Din score är: "+Config.LoggedInUser.score.ToString()+" :D");
 					this.Close();
 				}
 			}

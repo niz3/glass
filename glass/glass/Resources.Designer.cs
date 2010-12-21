@@ -74,9 +74,23 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap bil_randig {
+			get {
+				object obj = ResourceManager.GetObject("bil_randig", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap bil_rod {
 			get {
 				object obj = ResourceManager.GetObject("bil_rod", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap bil_vit {
+			get {
+				object obj = ResourceManager.GetObject("bil_vit", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -95,30 +109,30 @@ namespace glass {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap byxor_bla {
+		internal static System.Drawing.Bitmap byxa_bla {
 			get {
-				object obj = ResourceManager.GetObject("byxor_bla", resourceCulture);
+				object obj = ResourceManager.GetObject("byxa_bla", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
 		
-		internal static System.Drawing.Bitmap byxor_gron {
+		internal static System.Drawing.Bitmap byxa_gron {
 			get {
-				object obj = ResourceManager.GetObject("byxor_gron", resourceCulture);
+				object obj = ResourceManager.GetObject("byxa_gron", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
 		
-		internal static System.Drawing.Bitmap byxor_gul {
+		internal static System.Drawing.Bitmap byxa_gul {
 			get {
-				object obj = ResourceManager.GetObject("byxor_gul", resourceCulture);
+				object obj = ResourceManager.GetObject("byxa_gul", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
 		
-		internal static System.Drawing.Bitmap byxor_rod {
+		internal static System.Drawing.Bitmap byxa_rod {
 			get {
-				object obj = ResourceManager.GetObject("byxor_rod", resourceCulture);
+				object obj = ResourceManager.GetObject("byxa_rod", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -165,16 +179,23 @@ namespace glass {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap gubbe {
+		internal static System.Drawing.Bitmap frukt_bappelsin {
 			get {
-				object obj = ResourceManager.GetObject("gubbe", resourceCulture);
+				object obj = ResourceManager.GetObject("frukt_bappelsin", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
 		
-		internal static System.Drawing.Bitmap Gubbsovrum {
+		internal static System.Drawing.Bitmap frukt_paron {
 			get {
-				object obj = ResourceManager.GetObject("Gubbsovrum", resourceCulture);
+				object obj = ResourceManager.GetObject("frukt_paron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap gubbe {
+			get {
+				object obj = ResourceManager.GetObject("gubbe", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -210,6 +231,34 @@ namespace glass {
 		internal static System.Drawing.Bitmap hus_vitprick {
 			get {
 				object obj = ResourceManager.GetObject("hus_vitprick", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap jacka_bla {
+			get {
+				object obj = ResourceManager.GetObject("jacka_bla", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap jacka_gron {
+			get {
+				object obj = ResourceManager.GetObject("jacka_gron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap jacka_gul {
+			get {
+				object obj = ResourceManager.GetObject("jacka_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap jacka_rod {
+			get {
+				object obj = ResourceManager.GetObject("jacka_rod", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -256,6 +305,20 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap rum_frukter {
+			get {
+				object obj = ResourceManager.GetObject("rum_frukter", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap rum_klader {
+			get {
+				object obj = ResourceManager.GetObject("rum_klader", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap rum_prepositioner {
 			get {
 				object obj = ResourceManager.GetObject("rum_prepositioner", resourceCulture);
@@ -287,6 +350,34 @@ namespace glass {
 		internal static System.Drawing.Bitmap strumpa_rod {
 			get {
 				object obj = ResourceManager.GetObject("strumpa_rod", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap t_bla {
+			get {
+				object obj = ResourceManager.GetObject("t_bla", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap t_gron {
+			get {
+				object obj = ResourceManager.GetObject("t_gron", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap t_gul {
+			get {
+				object obj = ResourceManager.GetObject("t_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap t_rod {
+			get {
+				object obj = ResourceManager.GetObject("t_rod", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
