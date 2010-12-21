@@ -74,6 +74,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap bil_gul {
+			get {
+				object obj = ResourceManager.GetObject("bil_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap bil_randig {
 			get {
 				object obj = ResourceManager.GetObject("bil_randig", resourceCulture);
