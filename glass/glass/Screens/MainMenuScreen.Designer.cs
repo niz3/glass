@@ -77,6 +77,7 @@ namespace glass.Screens
 			this.picPrepositions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picPrepositions.TabIndex = 5;
 			this.picPrepositions.TabStop = false;
+			this.picPrepositions.Click += new System.EventHandler(this.PicPrepositionsClick);
 			// 
 			// picFruits
 			// 
@@ -91,6 +92,7 @@ namespace glass.Screens
 			this.picFruits.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picFruits.TabIndex = 6;
 			this.picFruits.TabStop = false;
+			this.picFruits.Click += new System.EventHandler(this.PicFruitsClick);
 			// 
 			// PicColors
 			// 
