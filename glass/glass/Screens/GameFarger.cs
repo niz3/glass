@@ -18,15 +18,23 @@ namespace glass.Screens
 	/// </summary>
 	public partial class GameFarger : Form
 	{
+		string[] Farger = {
+			"Gul",
+			"Blå",
+			"Grön",
+			"Röd",
+			"Vit",
+		};
+		int farg;
 		public GameFarger()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
-			int farg;
+			
 			InitializeComponent();
-			farg = Framework.rndInt(1,3);
-			MessageBox.Show(farg.ToString());
+			farg = Framework.rndInt(1,5);
+			labelinstruktion.Text="Klicka på den "+Farger[farg]+"a bilen";
 			}
 			void PictureBox1Click(object sender, EventArgs e)
 			{
@@ -40,7 +48,18 @@ namespace glass.Screens
 			
 		}
 		
-		void PictureBox3Click(object sender, EventArgs e)
+			void ClickCar(object sender,EventArgs e) {
+				PictureBox PictureBoxCar=(PictureBox) sender;
+				if(farg==Convert.ToInt32(PictureBoxCar.Tag))
+				{
+					MessageBox.Show("BRa JOBB");
+					farg = Framework.rndInt(1,5);
+					labelinstruktion.Text="Klicka på den "+Farger[farg]+"a bilen";
+				}
+			}
+			
+		
+		void GameFargerLoad(object sender, EventArgs e)
 		{
 			
 		}
