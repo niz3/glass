@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
@@ -76,6 +75,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\GameClothes.cs" />
+    <Compile Include="Screens\GameClothes.Designer.cs">
+      <DependentUpon>GameClothes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameFarger.cs" />
     <Compile Include="Screens\GameFarger.Designer.cs">
       <DependentUpon>GameFarger.cs</DependentUpon>
@@ -83,7 +86,14 @@
     <Compile Include="Screens\GameFruits.cs" />
     <Compile Include="Screens\GameFruits.Designer.cs">
       <DependentUpon>GameFruits.cs</DependentUpon>
+	</Compile>
+<<<<<<< HEAD
+    <Compile Include="Screens\GameClothes.cs" />
+    <Compile Include="Screens\GameClothes.Designer.cs">
+      <DependentUpon>GameClothes.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> nils/master
     <Compile Include="Screens\GamePrepositions.cs" />
     <Compile Include="Screens\GamePrepositions.Designer.cs">
       <DependentUpon>GamePrepositions.cs</DependentUpon>
@@ -123,148 +133,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\GameFruits.resx">
       <DependentUpon>GameFruits.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\GamePrepositions.resx">
-      <DependentUpon>GamePrepositions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\MainMenuScreen.resx">
-      <DependentUpon>MainMenuScreen.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dialog" />
-    <Folder Include="Screens" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
-=======
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
-  <PropertyGroup>
-    <ProjectGuid>{457E461A-B90A-4655-A26C-A386E4CE2724}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>glass</RootNamespace>
-    <AssemblyName>glass</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <SourceAnalysisOverrideSettingsFile>C:\Users\Axel\AppData\Roaming\ICSharpCode/SharpDevelop4.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
-    <SignAssembly>False</SignAssembly>
-    <DelaySign>False</DelaySign>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <NoStdLib>False</NoStdLib>
-    <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <RunCodeAnalysis>False</RunCodeAnalysis>
-    <RunSourceAnalysis>False</RunSourceAnalysis>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <FileAlignment>4096</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>Full</DebugType>
-    <Optimize>False</Optimize>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <StartAction>Project</StartAction>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <DebugSymbols>False</DebugSymbols>
-    <DebugType>None</DebugType>
-    <Optimize>True</Optimize>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
-    <DefineConstants>TRACE</DefineConstants>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="DirectShowLib-2005">
-      <HintPath>DirectShowLib-2005.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Dialog\DiffucultyDialog.cs" />
-    <Compile Include="Dialog\DiffucultyDialog.Designer.cs">
-      <DependentUpon>DiffucultyDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialog\YesNoDialog.cs" />
-    <Compile Include="Dialog\YesNoDialog.Designer.cs">
-      <DependentUpon>YesNoDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Framework.cs" />
-    <Compile Include="Dialog\Capture.cs" />
-    <Compile Include="Dialog\WebcamDialog.cs" />
-    <Compile Include="Dialog\WebcamDialog.Designer.cs">
-      <DependentUpon>WebcamDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\GameClothes.cs" />
-    <Compile Include="Screens\GameClothes.Designer.cs">
-      <DependentUpon>GameClothes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\GamePrepositions.cs" />
-    <Compile Include="Screens\GamePrepositions.Designer.cs">
-      <DependentUpon>GamePrepositions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\LoginForm.cs" />
-    <Compile Include="Screens\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\MainMenuScreen.cs" />
-    <Compile Include="Screens\MainMenuScreen.Designer.cs">
-      <DependentUpon>MainMenuScreen.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Dialog\DiffucultyDialog.resx">
-      <DependentUpon>DiffucultyDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\WebcamDialog.resx">
-      <DependentUpon>WebcamDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\YesNoDialog.resx">
-      <DependentUpon>YesNoDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
+	</EmbeddedResource>
     <EmbeddedResource Include="Screens\GameClothes.resx">
       <DependentUpon>GameClothes.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,5 +155,4 @@
     <Folder Include="Screens" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
->>>>>>> dylan/master
 </Project>

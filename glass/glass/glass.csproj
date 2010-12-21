@@ -75,6 +75,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\GameClothes.cs" />
+    <Compile Include="Screens\GameClothes.Designer.cs">
+      <DependentUpon>GameClothes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameFarger.cs" />
     <Compile Include="Screens\GameFarger.Designer.cs">
       <DependentUpon>GameFarger.cs</DependentUpon>
@@ -82,7 +86,6 @@
     <Compile Include="Screens\GameFruits.cs" />
     <Compile Include="Screens\GameFruits.Designer.cs">
       <DependentUpon>GameFruits.cs</DependentUpon>
-	</Compile>
     <Compile Include="Screens\GameClothes.cs" />
     <Compile Include="Screens\GameClothes.Designer.cs">
       <DependentUpon>GameClothes.cs</DependentUpon>
@@ -126,7 +129,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\GameFruits.resx">
       <DependentUpon>GameFruits.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\GameClothes.resx">
       <DependentUpon>GameClothes.cs</DependentUpon>
     </EmbeddedResource>
