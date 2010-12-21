@@ -137,7 +137,6 @@ namespace glass {
 			}
 		}
 		
-		internal static System.Drawing.Bitmap down {
 		internal static System.Drawing.Bitmap frukt_banan {
 			get {
 				object obj = ResourceManager.GetObject("frukt_banan", resourceCulture);
