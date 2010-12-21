@@ -62,6 +62,8 @@ namespace glass.Screens
 				drawArea1.Items.Add(plate[i]);
 			}
 			SpawnItems();
+			Framework.sndPlay.SoundLocation=@"Sounds\Fruits\flyttafrukt.wav";
+			Framework.sndPlay.Play();
 			}
 		void PicBackClick(object sender, EventArgs e){
 			Dialog.YesNoDialog AreYouSure =new glass.Dialog.YesNoDialog();
@@ -171,8 +173,13 @@ namespace glass.Screens
 			   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty;
 			   			Config.UpdateScore(Config.LoggedInUser);
 			   		}
-					MessageBox.Show("Du vannanananas, Din score är: "+Config.LoggedInUser.score.ToString()+" :D");
+					Framework.sndPlay.SoundLocation=@"Sounds\bra.wav";
+					Framework.sndPlay.Play();
+					//MessageBox.Show("Du vannanananas, Din score är: "+Config.LoggedInUser.score.ToString()+" :D");
 					this.Close();
+				}else{
+					Framework.sndPlay.SoundLocation=@"Sounds\Fruits\inteklar.wav";
+					Framework.sndPlay.Play();
 				}
 			}else{
 				ppp[0]=0;ppp[1]=0;
@@ -190,15 +197,21 @@ namespace glass.Screens
 					}
 				}
 				if (noodd==false) {
-					MessageBox.Show("fail");
+					Framework.sndPlay.SoundLocation=@"Sounds\Fruits\inteklar.wav";
+					Framework.sndPlay.Play();
 				}
 				if(f1[t1]==ppp[t1]&&f1[t2]==ppp[t2]&&noodd) {
 					if((Config.LoggedInUser.score&((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty)) {
 			   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Fruits<<(int)Config.LoggedInUser.difficulty;
 			   			Config.UpdateScore(Config.LoggedInUser);
 			   		}
-					MessageBox.Show("Du vannanananas, Din score är: "+Config.LoggedInUser.score.ToString()+" :D");
+					Framework.sndPlay.SoundLocation=@"Sounds\bra.wav";
+					Framework.sndPlay.Play();
+					//MessageBox.Show("Du vannanananas, Din score är: "+Config.LoggedInUser.score.ToString()+" :D");
 					this.Close();
+				}else{
+					Framework.sndPlay.SoundLocation=@"Sounds\Fruits\inteklar.wav";
+					Framework.sndPlay.Play();
 				}
 			}
 		}
