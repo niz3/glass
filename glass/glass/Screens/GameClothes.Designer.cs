@@ -54,7 +54,8 @@ namespace glass.Screens
 			// 
 			// drawArea1
 			// 
-			this.drawArea1.BackColor = System.Drawing.Color.Purple;
+			this.drawArea1.BackColor = System.Drawing.Color.Transparent;
+			this.drawArea1.BackgroundImage = global::glass.Resources.Gubbsovrum;
 			this.drawArea1.Location = new System.Drawing.Point(0, 32);
 			this.drawArea1.Name = "drawArea1";
 			this.drawArea1.Size = new System.Drawing.Size(800, 570);

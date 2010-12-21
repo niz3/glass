@@ -40,5 +40,11 @@ namespace glass.Screens {
 			frmDifficultyDialog.ShowDialog();
 			config.Config.LoggedInUser.difficulty=frmDifficultyDialog.Difficulty;
 		}
+		
+		void PicClothesClick(object sender, EventArgs e) {
+			SetDifficulty();
+			GameClothes frmGameClothes = new GameClothes();
+			frmGameClothes.ShowDialog(this);
+		}
 	}
 }

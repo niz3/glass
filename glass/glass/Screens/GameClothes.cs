@@ -55,7 +55,7 @@ namespace glass.Screens
 			DrawableItems d=new DrawableItems();
 			d.Parent=drawArea1;
 			d.Image=global::glass.Resources.gubbe;
-			d.Bounds=new Rectangle(250,20,300,550);
+			d.Bounds=new Rectangle(125,20,280,470);
 			drawArea1.Items.Add(d);
 			
 			SpawnClothes();
@@ -111,6 +111,34 @@ namespace glass.Screens
 			d=new DrawableItems();
 			d.Parent=drawArea1;
 			d.Image=byxor[Framework.rndInt(0,byxor.Length)];
+			d.Bounds=new Rectangle(700,300,200,200);
+			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+			d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+			drawArea1.Items.Add(d);
+			
+			Bitmap[] strumpor=new Bitmap[] {
+				global::glass.Resources.strumpa_bla,
+				global::glass.Resources.strumpa_rod,
+				global::glass.Resources.strumpa_gron,
+				global::glass.Resources.strumpa_gul,
+			};
+			d=new DrawableItems();
+			d.Parent=drawArea1;
+			d.Image=strumpor[Framework.rndInt(0,strumpor.Length)];
+			d.Bounds=new Rectangle(50,300,100,100);
+			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+			d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+			drawArea1.Items.Add(d);
+			
+			Bitmap[] mossa=new Bitmap[] {
+				global::glass.Resources.mossa_bla,
+				global::glass.Resources.mossa_rod,
+				global::glass.Resources.mossa_gron,
+				global::glass.Resources.mossa_gul,
+			};
+			d=new DrawableItems();
+			d.Parent=drawArea1;
+			d.Image=mossa[Framework.rndInt(0,mossa.Length)];
 			d.Bounds=new Rectangle(600,100,200,200);
 			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 			d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
