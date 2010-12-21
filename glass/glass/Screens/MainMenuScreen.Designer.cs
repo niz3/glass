@@ -96,10 +96,11 @@ namespace glass.Screens
 			// 
 			// PicColors
 			// 
-			this.PicColors.BackColor = System.Drawing.Color.Yellow;
+			this.PicColors.BackColor = System.Drawing.Color.Transparent;
 			this.PicColors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.PicColors.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.PicColors.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PicColors.Image = global::glass.Resources.meny_farger;
 			this.PicColors.Location = new System.Drawing.Point(5, 272);
 			this.PicColors.Name = "PicColors";
 			this.PicColors.Size = new System.Drawing.Size(380, 261);

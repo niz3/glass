@@ -270,6 +270,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap meny_farger {
+			get {
+				object obj = ResourceManager.GetObject("meny_farger", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap mossa_bla {
 			get {
 				object obj = ResourceManager.GetObject("mossa_bla", resourceCulture);
