@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Media;
 using glass.config;
 using glass.framework;
 
@@ -46,6 +47,8 @@ namespace glass {
 				Config.UserFaces.Add(pct);
 			}
 			DrawLogin();
+			Framework.sndPlay.SoundLocation=@"Sounds\login.wav";
+			Framework.sndPlay.Play();
 		}
 		void AddUser(object sender, EventArgs e) {
 			Dialog.WebcamDialog frmWebcam=new Dialog.WebcamDialog();

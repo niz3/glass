@@ -112,7 +112,7 @@ namespace glass.Screens
 			sender.Parent.BringItemToFront(sender);
 			dragging=(!dragging)&sender.Enabled;
 			if((!dragging)&&(sender.Enabled)) {
-				MessageBox.Show("omg");
+				MessageBox.Show(goal.Name);
 				foreach (ClothPlaces place in PlaceCollection) {
 					if((place.Name==goal.Name)&&(Framework.PointInPolygon(new Point(x,y),place.Polygon))) {
 						MessageBox.Show("lol");

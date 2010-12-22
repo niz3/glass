@@ -25,6 +25,8 @@ namespace glass.Dialog {
 		IntPtr m_ip = IntPtr.Zero;
 		public WebcamDialog(){
 			InitializeComponent();
+			Framework.sndPlay.SoundLocation=@"Sounds\tabild.wav";
+			Framework.sndPlay.Play();
 		}
 		public Bitmap get_b() {
 			return b;

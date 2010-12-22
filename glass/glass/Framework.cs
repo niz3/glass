@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
+using System.Media;
 using Microsoft.Win32;
 using glass.config;
 using System.Drawing.Drawing2D;
@@ -189,6 +190,7 @@ namespace glass.framework {
 	}
 
 	public static class Framework {
+		public static SoundPlayer sndPlay=new SoundPlayer();
 		private static Random rnd=new Random(DateTime.Now.Millisecond);
 		public enum LevelScores {
 			Prepositons=1<<0,
