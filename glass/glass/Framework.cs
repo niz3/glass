@@ -25,6 +25,7 @@ namespace glass.framework {
 		private Bitmap image;
 		private DrawArea parent;
 		private bool enabled=true;
+		public int Tag;
 		#endregion
 		#region Properties
 		public DrawArea Parent {
