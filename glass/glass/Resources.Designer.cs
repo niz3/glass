@@ -74,6 +74,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap bil_gul {
+			get {
+				object obj = ResourceManager.GetObject("bil_gul", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap bil_randig {
 			get {
 				object obj = ResourceManager.GetObject("bil_randig", resourceCulture);
@@ -259,6 +266,13 @@ namespace glass {
 		internal static System.Drawing.Bitmap jacka_rod {
 			get {
 				object obj = ResourceManager.GetObject("jacka_rod", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap meny_farger {
+			get {
+				object obj = ResourceManager.GetObject("meny_farger", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}

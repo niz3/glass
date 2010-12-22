@@ -98,7 +98,6 @@ namespace glass.Screens {
 			picBack.MouseEnter+= new EventHandler(Framework.EnterClickable);
 			picBack.MouseLeave+= new EventHandler(Framework.LeaveClickable);
 			prgProgress.Maximum=total;
-			SpawnItem();		
 		}
 		private void ClickMovable(DrawableItems sender, MouseEventArgs e) {
 			drawArea1.ActiveItem=sender;
@@ -120,7 +119,8 @@ namespace glass.Screens {
 					   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Prepositons<<(int)Config.LoggedInUser.difficulty;
 					   			Config.UpdateScore(Config.LoggedInUser);
 					   		}
-					   		MessageBox.Show("Bra jobbat!");
+					   		Framework.sndPlay.SoundLocation=@"Sounds\bra.wav";
+							Framework.sndPlay.Play();
 					   		this.Close();
 					   	}
 					   	SpawnItem();
@@ -148,13 +148,20 @@ namespace glass.Screens {
 			d.Parent=drawArea1;
 			d.Image=item.Image;
 			d.Bounds=new Rectangle(Framework.rndInt(64,736),Framework.rndInt(500,506),d.Image.Width,d.Image.Height);
-			//d.MouseEnter+= new DrawableItems.ItemEventHandler(Framework.EnterClickable);
-			//d.MouseLeave+= new DrawableItems.ItemEventHandler(Framework.LeaveClickable);
 			d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 			d.MouseMove+= new DrawableItems.ItemMouseEventHandler(MoveMovable);
 			drawArea1.Items.Add(d);
 			goal=place;
 			lblInstruction.Text="Lägg "+item.Name+item.Ending+" "+place.Name+"; "+Convert.ToString(total-correct)+" kvar";
+			string itemsound=item.Name+item.Ending;
+			itemsound=itemsound.ToLower().Replace(" ","").Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
+			string placesound=place.Name;
+			placesound=placesound.ToLower().Replace(" ","").Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
+			
+			Framework.sndPlay.SoundLocation=@"Sounds\Prepositions\"+itemsound;
+			Framework.sndPlay.PlaySync();
+			Framework.sndPlay.SoundLocation=@"Sounds\Prepositions\"+placesound;
+			Framework.sndPlay.Play();
 		}
 		#endregion
 		
@@ -164,6 +171,11 @@ namespace glass.Screens {
 			if(AreYouSure.Answer) {
 				this.Close();
 			}
+		}
+		
+		void GamePrepositionsShown(object sender, EventArgs e){
+			drawArea1.Invalidate(); 
+			SpawnItem();
 		}
 	}
 }
