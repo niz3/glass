@@ -21,18 +21,24 @@ namespace glass.Screens
 	/// 
 	
 	partial class GameClothes : Form {
+		private Dictionary<Difficulty, int[]> Clothes = new Dictionary<Difficulty, int[]> {
+			{Difficulty.easy, new int[]{0,1,3}},
+			{Difficulty.normal, new int[]{0,1,3,2,0}},
+			{Difficulty.hard, new int[]{0,1,1,3,2,0}},
+		};
+		int ActiveClothes=0;
 		struct ClothPlaces {
 			private string name;
-			private Point[] poly;
+			private Rectangle poly;
 			public string Name {
 				get{return(name);}
 				set{name=value;}
 			}
-			public Point[] Polygon {
+			public Rectangle Polygon {
 				get{return(poly);}
 				set{poly=value;}
 			}
-			public ClothPlaces(string n, Point[] p) {
+			public ClothPlaces(string n, Rectangle p) {
 				name=n;
 				poly=p;
 			}
@@ -80,10 +86,10 @@ namespace glass.Screens
 		bool dragging;
 		Point offset;
 		ClothPlaces[] PlaceCollection = new ClothPlaces[]{
-			new ClothPlaces("troja",new Point[] {new Point(268,117), new Point(536-236,117), new Point(536-236,326-185), new Point(268,326-185)}),
-			new ClothPlaces("byxor",new Point[] {new Point(275,298), new Point(516-213,298), new Point(516-213,500-178), new Point(276,500-178)}),
-			new ClothPlaces("strumpor",new Point[] {new Point(251,446), new Point(549-274,446), new Point(549-274,503-38), new Point(251,503-38)}),
-			new ClothPlaces("mossa",new Point[] {new Point(336,10), new Point(456-87,10), new Point(456-87,110-60), new Point(336,110-60)}),
+			new ClothPlaces("troja",new Rectangle(268,117, 151,180)),
+			new ClothPlaces("byxor",new Rectangle(275,298, 213,178)),
+			new ClothPlaces("strumpor",new Rectangle(251,446, 270, 38)),
+			new ClothPlaces("mossa",new Rectangle(336,10, 87, 60)),
 		};
 		public GameClothes()
 		{
@@ -109,15 +115,23 @@ namespace glass.Screens
 			offset=new Point(e.X,e.Y);
 			int x=(int)((sender.Bounds.X+sender.Bounds.X+sender.Bounds.Width)/2);
 			int y=(int)((sender.Bounds.Y+sender.Bounds.Y+sender.Bounds.Height)/2);
-			sender.Parent.BringItemToFront(sender);
 			dragging=(!dragging)&sender.Enabled;
 			if((!dragging)&&(sender.Enabled)) {
-				MessageBox.Show("omg");
-				foreach (ClothPlaces place in PlaceCollection) {
-					if((place.Name==goal.Name)&&(Framework.PointInPolygon(new Point(x,y),place.Polygon))) {
-						MessageBox.Show("lol");
+				if(sender.Tag==ActiveClothes&&goal.Polygon.Contains(new Point(x,y))) {
+					sender.Bounds=new Rectangle(goal.Polygon.Location.X+16,goal.Polygon.Y+16, sender.Bounds.Width, sender.Bounds.Height);
+					sender.Enabled=false;
+					drawArea1.Invalidate();
+					ActiveClothes++;
+					if(ActiveClothes==Clothes[Config.LoggedInUser.difficulty].Length) {
+						MessageBox.Show("omglol");
+						this.Close();
+					}else{
+						goal=PlaceCollection[Clothes[Config.LoggedInUser.difficulty][ActiveClothes]];
 					}
 				}
+			}
+			if(sender.Enabled) {
+				sender.Parent.BringItemToFront(sender);
 			}
 		}
 		private void MoveMovable(DrawableItems sender,MouseEventArgs e) {
@@ -132,10 +146,13 @@ namespace glass.Screens
 			}
 		}
 		void SpawnClothes() {
+			int l;
 			if(Config.LoggedInUser.difficulty==Difficulty.easy) {
 				DrawableItems d=new DrawableItems();
 				d.Parent=drawArea1;
-				d.Image=trojor[Framework.rndInt(0,trojor.Length)];
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=trojor[l];
+				d.Tag=0;
 				d.Bounds=new Rectangle(0,0,236,185);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
@@ -143,7 +160,9 @@ namespace glass.Screens
 				
 				d=new DrawableItems();
 				d.Parent=drawArea1;
-				d.Image=byxor[Framework.rndInt(0,byxor.Length)];
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=byxor[l];
+				d.Tag=1;
 				d.Bounds=new Rectangle(600,100,213,178);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
@@ -151,14 +170,97 @@ namespace glass.Screens
 				
 				d=new DrawableItems();
 				d.Parent=drawArea1;
-				d.Image=mossor[Framework.rndInt(0,mossor.Length)];
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=mossor[l];
+				d.Tag=2;
+				d.Bounds=new Rectangle(600,300,87,60);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+			}else if(Config.LoggedInUser.difficulty==Difficulty.normal) {
+				DrawableItems d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=trojor[l];
+				d.Tag=0;
+				d.Bounds=new Rectangle(0,0,236,185);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=byxor[l];
+				d.Tag=1;
+				d.Bounds=new Rectangle(600,100,213,178);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=mossor[l];
+				d.Tag=2;
 				d.Bounds=new Rectangle(600,300,87,60);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
 				
-				goal=PlaceCollection[0];
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=strumpor[l];
+				d.Tag=2;
+				d.Bounds=new Rectangle(600,300,274,38);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=jackor[l];
+				d.Tag=2;
+				d.Bounds=new Rectangle(600,300,237,187);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
 			}
+			if(Config.LoggedInUser.difficulty==Difficulty.hard) {
+				DrawableItems d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=trojor[l];
+				d.Tag=0;
+				d.Bounds=new Rectangle(0,0,236,185);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=byxor[l];
+				d.Tag=1;
+				d.Bounds=new Rectangle(600,100,213,178);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=mossor[l];
+				d.Tag=2;
+				d.Bounds=new Rectangle(600,300,87,60);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+			}
+			goal=PlaceCollection[0];
+			ActiveClothes=0;
 		}
 	}
 }

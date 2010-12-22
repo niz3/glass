@@ -81,5 +81,8 @@ C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Dialog.WebcamS
 D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Debug\glass.Dialog.WebcamSetup.resources
 D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Debug\glass.Screens.GameClothes.resources
 C:\Users\Axel\Projekt\glass\glass\glass\glass\obj\x86\Debug\glass.Screens.GameClothes.resources
+D:\Dokument\Projekt\glass\glass\glass\obj\x86\Debug\glass.Dialog.WebcamSetup.resources
+D:\Dokument\Projekt\glass\glass\glass\obj\x86\Debug\glass.Screens.GameFarger.resources
+D:\Dokument\Projekt\glass\glass\glass\obj\x86\Debug\glass.Screens.GameFruits.resources
 D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.Dialog.WebcamSetup.resources
 D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.Screens.GameClothes.resources
