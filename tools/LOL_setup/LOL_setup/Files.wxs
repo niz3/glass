@@ -1,0 +1,94 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="LoL">
+					<Component Id="LoL" Guid="D31F1846-7EB2-4760-978B-5F4CC31F936D" DiskId="1">
+						<File Id="MainExe" Name="LoL.exe" Source="LoL\LoL.exe" KeyPath="yes">
+							<Shortcut Id='startmenuExe' Icon="icoExe.exe" IconIndex="0"  Directory='ProgramMenuDir' Name='LoL - Lek och Lär' WorkingDirectory="INSTALLDIR" Advertise='yes' />
+							<Shortcut Id='desktopExe' Icon="icoExe.exe" IconIndex="0"  Directory='DesktopFolder' Name='LoL - Lek och Lär' WorkingDirectory="INSTALLDIR" Advertise='yes' />
+						</File>
+						<File Id="LicenseFile" Name="LICENSE.TXT" Source="LICENSE.TXT" />
+						<File Id="DirectShowDll" Name="DirectShowLib-2005.dll" Source="LoL\DirectShowLib-2005.dll" />
+					</Component>
+					<Directory Id="SoundDir" Name="Sounds">
+						<Component Id="Sounds" Guid="B58A5B11-C235-47A3-8B93-3123A09969DF" DiskId="1">
+							<File Id="sndBra" Name="bra.wav" Source="LoL\Sounds\bra.wav" />
+							<File Id="sndLogin" Name="login.wav" Source="LoL\Sounds\login.wav" />
+							<File Id="sndTabild" Name="tabild.wav" Source="LoL\Sounds\tabild.wav" />
+							<File Id="sndStarta" Name="starta.wav" Source="LoL\Sounds\starta.wav" />
+							<File Id="sndSvarighet" Name="svarighet.wav" Source="LoL\Sounds\svarighet.wav" />
+							<File Id="sndAvsluta" Name="avsluta.wav" Source="LoL\Sounds\avsluta.wav" />
+						</Component>
+						<Directory Id="FruitsDir" Name="Fruits">
+							<Component Id="FruitSounds" Guid="AD2FAD07-66C8-40BB-863C-21915730A16E" DiskId="1">
+								<File Id="sndFlyttafrukt" Name="flyttafrukt.wav"  Source="LoL\Sounds\Fruits\flyttafrukt.wav" />
+								<File Id="sndInteKlar" Name="inteklar.wav"  Source="LoL\Sounds\Fruits\inteklar.wav" />
+							</Component>
+						</Directory>
+						<Directory Id="PrepDir" Name="Prepositions">
+							<Component Id="PrepSounds" Guid="825774F7-AD80-4CFD-BC42-DD701CF4A480" DiskId="1">
+								<File Id="sndApplet" Name="applet.wav"  Source="LoL\Sounds\Prepositions\applet.wav" />
+								<File Id="sndBollen" Name="fotbollen.wav"  Source="LoL\Sounds\Prepositions\fotbollen.wav" />
+								<File Id="sndBilenp" Name="bilen.wav"  Source="LoL\Sounds\Prepositions\bilen.wav" />
+								<File Id="sndKameran" Name="kameran.wav"  Source="LoL\Sounds\Prepositions\kameran.wav" />
+								<File Id="sndBananen" Name="bananen.wav"  Source="LoL\Sounds\Prepositions\bananen.wav" />
+								
+								<File Id="sndMellanbokhyllanochstolen" Name="mellanbokhyllanochstolen.wav"  Source="LoL\Sounds\Prepositions\mellanbokhyllanochstolen.wav" />
+								<File Id="sndIbokhyllan" Name="ibokhyllan.wav"  Source="LoL\Sounds\Prepositions\ibokhyllan.wav" />
+								<File Id="sndPaoverstahyllan" Name="paoverstahyllan.wav"  Source="LoL\Sounds\Prepositions\paoverstahyllan.wav" />
+								<File Id="sndPaunderstahyllan" Name="paunderstahyllan.wav"  Source="LoL\Sounds\Prepositions\paunderstahyllan.wav" />
+								<File Id="sndPahyllanimitten" Name="pahyllanimitten.wav"  Source="LoL\Sounds\Prepositions\pahyllanimitten.wav" />
+								<File Id="sndPabordet" Name="pabordet.wav"  Source="LoL\Sounds\Prepositions\pabordet.wav" />
+								<File Id="sndUnderbordet" Name="underbordet.wav"  Source="LoL\Sounds\Prepositions\underbordet.wav" />
+								<File Id="sndPastolen" Name="pastolen.wav"  Source="LoL\Sounds\Prepositions\pastolen.wav" />
+							</Component>
+						</Directory>
+						<Directory Id="ColorDir" Name="Colors">
+							<Component Id="ColorSounds" Guid="2767F763-FC94-4738-ABD2-3FE9F864D288" DiskId="1">
+								<File Id="sndBilen" Name="bilen.wav"  Source="LoL\Sounds\Colors\bilen.wav" />
+								<File Id="sndHuset" Name="huset.wav"  Source="LoL\Sounds\Colors\huset.wav" />
+								
+								<File Id="sndBla" Name="bla.wav"  Source="LoL\Sounds\Colors\bla.wav" />
+								<File Id="sndRod" Name="rod.wav"  Source="LoL\Sounds\Colors\rod.wav" />
+								<File Id="sndGul" Name="gul.wav"  Source="LoL\Sounds\Colors\gul.wav" />
+								<File Id="sndRos" Name="ros.wav"  Source="LoL\Sounds\Colors\ros.wav" />
+								<File Id="sndGron" Name="gron.wav"  Source="LoL\Sounds\Colors\gron.wav" />
+								<File Id="sndVit" Name="vit.wav"  Source="LoL\Sounds\Colors\vit.wav" />
+								<File Id="sndBrun" Name="brun.wav"  Source="LoL\Sounds\Colors\brun.wav" />
+								<File Id="sndRandig" Name="randig.wav"  Source="LoL\Sounds\Colors\randig.wav" />
+								<File Id="sndVitprickig" Name="vitprickig.wav"  Source="LoL\Sounds\Colors\vitprickig.wav" />
+								<File Id="sndRodprickig" Name="rodprickig.wav"  Source="LoL\Sounds\Colors\rodprickig.wav" />
+							
+								<File Id="sndKlickaden" Name="klickaden.wav"  Source="LoL\Sounds\Colors\klickaden.wav" />
+								<File Id="sndKlickadet" Name="klickadet.wav"  Source="LoL\Sounds\Colors\klickadet.wav" />
+							</Component>
+						</Directory>
+						<Directory Id="ClothDir" Name="Clothes">
+							<Component Id="ClothSounds" Guid="D67A5F2C-757E-4A57-ABDE-7B869C149AD6" DiskId="1">
+								<File Id="sndTshirt" Name="t-shirt.wav"  Source="LoL\Sounds\Clothes\t-shirt.wav" />
+								<File Id="sndTroja" Name="troja.wav"  Source="LoL\Sounds\Clothes\troja.wav" />
+								<File Id="sndByxor" Name="byxor.wav"  Source="LoL\Sounds\Clothes\byxor.wav" />
+								<File Id="sndJacka" Name="jacka.wav"  Source="LoL\Sounds\Clothes\jacka.wav" />
+								<File Id="sndStrumpor" Name="strumpor.wav"  Source="LoL\Sounds\Clothes\strumpor.wav" />
+								<File Id="sndMossa" Name="mossa.wav"  Source="LoL\Sounds\Clothes\mossa.wav" />
+							
+								<File Id="sndKlapa" Name="klapa.wav"  Source="LoL\Sounds\Clothes\klapa.wav" />
+							</Component>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+		 	<Directory Id="ProgramMenuFolder" Name="Programs">
+		 		<Directory Id="ProgramMenuDir" Name="LoL - Lek och Lär">
+					<Component Id="ProgramMenuDir" Guid="4AC410B7-915D-4425-92C0-AEDB51779283">
+						<RemoveFolder Id='ProgramMenuDir' On='uninstall' />
+						<RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+					</Component>
+				</Directory>
+				<Directory Id="DesktopFolder" Name="Desktop" />
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

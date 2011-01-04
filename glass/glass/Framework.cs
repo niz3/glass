@@ -278,8 +278,8 @@ namespace glass.config {
 	
 	//application constants
 	public static class app {
-		public const string name="glass";
-		public const double version=0.1;
+		public const string name="LoL";
+		public const double version=0.9;
 		public static string confdir=Environment.GetEnvironmentVariable("APPDATA")+"\\"+name;
 	}
 	

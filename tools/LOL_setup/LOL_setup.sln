@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.0.0.6842
+Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "LOL_setup", "LOL_setup\LOL_setup.wixproj", "{FF7AD10E-875F-4609-A910-A66135ACBB2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF7AD10E-875F-4609-A910-A66135ACBB2D}.Debug|x86.Build.0 = Debug|x86
+		{FF7AD10E-875F-4609-A910-A66135ACBB2D}.Debug|x86.ActiveCfg = Debug|x86
+		{FF7AD10E-875F-4609-A910-A66135ACBB2D}.Release|x86.Build.0 = Release|x86
+		{FF7AD10E-875F-4609-A910-A66135ACBB2D}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal

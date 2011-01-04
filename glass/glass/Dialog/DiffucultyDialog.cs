@@ -14,6 +14,7 @@ namespace glass.Dialog {
 		public DifficultyDialog() {
 			InitializeComponent();
 			Framework.sndPlay.SoundLocation=@"Sounds\svarighet.wav";
+			//MessageBox.Show(Framework.sndPlay.SoundLocation);
 			Framework.sndPlay.Play();
 		}
 		
@@ -26,3 +27,4 @@ namespace glass.Dialog {
 		}
 	}
 }
+

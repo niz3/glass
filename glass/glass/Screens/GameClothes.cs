@@ -21,6 +21,11 @@ namespace glass.Screens
 	/// 
 	
 	partial class GameClothes : Form {
+		private Dictionary<Difficulty, string[]> ClothSounds = new Dictionary<Difficulty, string[]> {
+			{Difficulty.easy, new string[]{"troja.wav","byxor.wav","mossa.wav"}},
+			{Difficulty.normal, new string[]{"troja.wav","strumpor.wav","byxor.wav","mossa.wav","jacka.wav"}},
+			{Difficulty.hard, new string[]{"t-shirt.wav","troja.wav","strumpor.wav","byxor.wav","mossa.wav","jacka.wav"}},
+		};
 		private Dictionary<Difficulty, int[]> Clothes = new Dictionary<Difficulty, int[]> {
 			{Difficulty.easy, new int[]{0,1,3}},
 			{Difficulty.normal, new int[]{0,2,1,3,0}},
@@ -132,6 +137,10 @@ namespace glass.Screens
 						this.Close();
 					}else{
 						goal=PlaceCollection[Clothes[Config.LoggedInUser.difficulty][ActiveClothes]];
+						Framework.sndPlay.SoundLocation=@"Sounds\Clothes\klapa.wav";
+						Framework.sndPlay.PlaySync();
+						Framework.sndPlay.SoundLocation=@"Sounds\Clothes\"+ClothSounds[Config.LoggedInUser.difficulty][ActiveClothes];
+						Framework.sndPlay.Play();
 						//MessageBox.Show(goal.Name+" "+goal.Polygon.X.ToString()+" "+goal.Polygon.Y.ToString());
 						//picBack.Bounds=goal.Polygon;
 						//drawArea1.Controls.Add(picBack);
@@ -296,9 +305,13 @@ namespace glass.Screens
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
-			}
+			} 
 			goal=PlaceCollection[0];
 			ActiveClothes=0;
+			Framework.sndPlay.SoundLocation=@"Sounds\Clothes\klapa.wav";
+			Framework.sndPlay.PlaySync();
+			Framework.sndPlay.SoundLocation=@"Sounds\Clothes\"+ClothSounds[Config.LoggedInUser.difficulty][ActiveClothes];
+			Framework.sndPlay.Play();
 		}
 	}
 }
