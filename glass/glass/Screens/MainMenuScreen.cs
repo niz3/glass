@@ -19,6 +19,7 @@ namespace glass.Screens {
 			global::glass.Resources.star110,
 			global::glass.Resources.star001,
 			global::glass.Resources.star101,
+			global::glass.Resources.star011,
 			global::glass.Resources.star111,
 		};
 		public MainMenuScreen() {

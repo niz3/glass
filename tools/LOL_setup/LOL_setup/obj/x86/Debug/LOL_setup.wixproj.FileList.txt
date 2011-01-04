@@ -1,3 +1,4 @@
 C:\Users\Axel\Documents\SharpDevelop Projects\LOL_setup\LOL_setup\bin\Debug\LOL_setup.wixpdb
 obj\x86\Debug\Files.wixobj
 obj\x86\Debug\Setup.wixobj
+D:\Dokument\Projekt\spel\glass\tools\LOL_setup\LOL_setup\bin\Debug\LOL_setup.wixpdb
