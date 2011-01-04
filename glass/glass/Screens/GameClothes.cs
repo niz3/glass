@@ -23,8 +23,8 @@ namespace glass.Screens
 	partial class GameClothes : Form {
 		private Dictionary<Difficulty, int[]> Clothes = new Dictionary<Difficulty, int[]> {
 			{Difficulty.easy, new int[]{0,1,3}},
-			{Difficulty.normal, new int[]{0,1,3,2,0}},
-			{Difficulty.hard, new int[]{0,1,1,3,2,0}},
+			{Difficulty.normal, new int[]{0,2,1,3,0}},
+			{Difficulty.hard, new int[]{0,0,2,1,3,0}},
 		};
 		int ActiveClothes=0;
 		struct ClothPlaces {
@@ -86,10 +86,10 @@ namespace glass.Screens
 		bool dragging;
 		Point offset;
 		ClothPlaces[] PlaceCollection = new ClothPlaces[]{
-			new ClothPlaces("troja",new Rectangle(268,117, 151,180)),
-			new ClothPlaces("byxor",new Rectangle(275,298, 213,178)),
-			new ClothPlaces("strumpor",new Rectangle(251,446, 270, 38)),
-			new ClothPlaces("mossa",new Rectangle(336,10, 87, 60)),
+			new ClothPlaces("troja",new Rectangle(268,117, 100,100)),
+			new ClothPlaces("byxor",new Rectangle(275,298, 100,80)),
+			new ClothPlaces("strumpor",new Rectangle(251,436, 200, 60)),
+			new ClothPlaces("mossa",new Rectangle(336,10, 50, 60)),
 		};
 		public GameClothes()
 		{
@@ -117,7 +117,8 @@ namespace glass.Screens
 			int y=(int)((sender.Bounds.Y+sender.Bounds.Y+sender.Bounds.Height)/2);
 			dragging=(!dragging)&sender.Enabled;
 			if((!dragging)&&(sender.Enabled)) {
-				if(sender.Tag==ActiveClothes&&goal.Polygon.Contains(new Point(x,y))) {
+				//if(sender.Tag==ActiveClothes&&goal.Polygon.Contains(new Point(x,y))) {
+				if(sender.Tag==ActiveClothes&&goal.Polygon.Contains(sender.Bounds.Location)) {
 					sender.Bounds=new Rectangle(goal.Polygon.Location.X+16,goal.Polygon.Y+16, sender.Bounds.Width, sender.Bounds.Height);
 					sender.Enabled=false;
 					drawArea1.Invalidate();
@@ -127,6 +128,9 @@ namespace glass.Screens
 						this.Close();
 					}else{
 						goal=PlaceCollection[Clothes[Config.LoggedInUser.difficulty][ActiveClothes]];
+						//MessageBox.Show(goal.Name+" "+goal.Polygon.X.ToString()+" "+goal.Polygon.Y.ToString());
+						//picBack.Bounds=goal.Polygon;
+						//drawArea1.Controls.Add(picBack);
 					}
 				}
 			}
@@ -191,8 +195,18 @@ namespace glass.Screens
 				d=new DrawableItems();
 				d.Parent=drawArea1;
 				l=Framework.rndInt(0,trojor.Length);
-				d.Image=byxor[l];
+				d.Image=strumpor[l];
 				d.Tag=1;
+				d.Bounds=new Rectangle(600,300,274,38);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=byxor[l];
+				d.Tag=2;
 				d.Bounds=new Rectangle(600,100,213,178);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
@@ -202,8 +216,39 @@ namespace glass.Screens
 				d.Parent=drawArea1;
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=mossor[l];
-				d.Tag=2;
+				d.Tag=3;
 				d.Bounds=new Rectangle(600,300,87,60);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=jackor[l];
+				d.Tag=4;
+				d.Bounds=new Rectangle(600,300,237,187);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+			}
+			if(Config.LoggedInUser.difficulty==Difficulty.hard) {
+				DrawableItems d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=tshirts[l];
+				d.Tag=0;
+				d.Bounds=new Rectangle(0,0,151,180);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=trojor[l];
+				d.Tag=1;
+				d.Bounds=new Rectangle(600,100,236,185);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -221,30 +266,9 @@ namespace glass.Screens
 				d=new DrawableItems();
 				d.Parent=drawArea1;
 				l=Framework.rndInt(0,trojor.Length);
-				d.Image=jackor[l];
-				d.Tag=2;
-				d.Bounds=new Rectangle(600,300,237,187);
-				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
-				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
-				drawArea1.Items.Add(d);
-			}
-			if(Config.LoggedInUser.difficulty==Difficulty.hard) {
-				DrawableItems d=new DrawableItems();
-				d.Parent=drawArea1;
-				l=Framework.rndInt(0,trojor.Length);
-				d.Image=trojor[l];
-				d.Tag=0;
-				d.Bounds=new Rectangle(0,0,236,185);
-				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
-				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
-				drawArea1.Items.Add(d);
-				
-				d=new DrawableItems();
-				d.Parent=drawArea1;
-				l=Framework.rndInt(0,trojor.Length);
 				d.Image=byxor[l];
-				d.Tag=1;
-				d.Bounds=new Rectangle(600,100,213,178);
+				d.Tag=3;
+				d.Bounds=new Rectangle(600,300,87,60);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -253,7 +277,18 @@ namespace glass.Screens
 				d.Parent=drawArea1;
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=mossor[l];
-				d.Tag=2;
+				d.Tag=4;
+				d.Bounds=new Rectangle(600,300,213,178);
+				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
+				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
+				drawArea1.Items.Add(d);
+				
+				
+				d=new DrawableItems();
+				d.Parent=drawArea1;
+				l=Framework.rndInt(0,trojor.Length);
+				d.Image=jackor[l];
+				d.Tag=5;
 				d.Bounds=new Rectangle(600,300,87,60);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
