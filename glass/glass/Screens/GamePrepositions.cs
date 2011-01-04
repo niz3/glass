@@ -102,6 +102,7 @@ namespace glass.Screens {
 		private void ClickMovable(DrawableItems sender, MouseEventArgs e) {
 			drawArea1.ActiveItem=sender;
 			offset=new Point(e.X,e.Y);
+			
 			int x=(int)((sender.Bounds.X+sender.Bounds.X+sender.Bounds.Width)/2);
 			int y=(int)((sender.Bounds.Y+sender.Bounds.Y+sender.Bounds.Height)/2);
 			sender.Parent.BringItemToFront(sender);
@@ -120,11 +121,12 @@ namespace glass.Screens {
 					   			Config.UpdateScore(Config.LoggedInUser);
 					   		}
 					   		Framework.sndPlay.SoundLocation=@"Sounds\bra.wav";
-							Framework.sndPlay.Play();
+							Framework.sndPlay.PlaySync();
 					   		this.Close();
+					   	}else{
+					   		SpawnItem();
+					   		Invalidate(InvalidateRect);
 					   	}
-					   	SpawnItem();
-					   	Invalidate(InvalidateRect);
 					}
 				}
 			}

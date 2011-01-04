@@ -10,6 +10,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ApplicationIcon>LoL.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -86,7 +87,7 @@
     <Compile Include="Screens\GameFruits.cs" />
     <Compile Include="Screens\GameFruits.Designer.cs">
       <DependentUpon>GameFruits.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Screens\GamePrepositions.cs" />
     <Compile Include="Screens\GamePrepositions.Designer.cs">
       <DependentUpon>GamePrepositions.cs</DependentUpon>

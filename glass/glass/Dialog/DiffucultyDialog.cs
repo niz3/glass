@@ -13,7 +13,8 @@ namespace glass.Dialog {
 		public glass.config.Difficulty Difficulty=glass.config.Difficulty.normal;
 		public DifficultyDialog() {
 			InitializeComponent();
-			Framework.sndPlay.SoundLocation=@"Sounds\bra.wav";
+			Framework.sndPlay.SoundLocation=@"Sounds\svarighet.wav";
+			//MessageBox.Show(Framework.sndPlay.SoundLocation);
 			Framework.sndPlay.Play();
 		}
 		
@@ -26,3 +27,4 @@ namespace glass.Dialog {
 		}
 	}
 }
+

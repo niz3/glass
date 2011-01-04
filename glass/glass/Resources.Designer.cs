@@ -277,6 +277,13 @@ namespace glass {
 			}
 		}
 		
+		internal static System.Drawing.Bitmap meny_klader {
+			get {
+				object obj = ResourceManager.GetObject("meny_klader", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
 		internal static System.Drawing.Bitmap mossa_bla {
 			get {
 				object obj = ResourceManager.GetObject("mossa_bla", resourceCulture);
@@ -336,6 +343,62 @@ namespace glass {
 		internal static System.Drawing.Bitmap rum_prepositioner {
 			get {
 				object obj = ResourceManager.GetObject("rum_prepositioner", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap star000 {
+			get {
+				object obj = ResourceManager.GetObject("star000", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap star001 {
+			get {
+				object obj = ResourceManager.GetObject("star001", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap star010 {
+			get {
+				object obj = ResourceManager.GetObject("star010", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap star011 {
+			get {
+				object obj = ResourceManager.GetObject("star011", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap star100 {
+			get {
+				object obj = ResourceManager.GetObject("star100", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap star101 {
+			get {
+				object obj = ResourceManager.GetObject("star101", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap star110 {
+			get {
+				object obj = ResourceManager.GetObject("star110", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		internal static System.Drawing.Bitmap star111 {
+			get {
+				object obj = ResourceManager.GetObject("star111", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}

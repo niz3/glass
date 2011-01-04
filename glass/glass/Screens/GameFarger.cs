@@ -129,11 +129,11 @@ namespace glass.Screens
 				}
 				farg = Framework.rndInt(1,5);
 				labelinstruktion.Text="Klicka på den "+FargerEasy[farg]+"a bilen";
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\klickaden.wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\klickaden.wav";
 				Framework.sndPlay.PlaySync();
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\"+FargerEasy[farg].Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\"+FargerEasy[farg].Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
 				Framework.sndPlay.PlaySync();
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\bilen.wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\bilen.wav";
 				Framework.sndPlay.Play();
 			}
 			
@@ -159,15 +159,16 @@ namespace glass.Screens
 				if(farg==Convert.ToInt32(PictureBoxCar.Tag))
 				{
 					prgProgress.PerformStep();
-					farg = Framework.rndInt(1,5);
-					labelinstruktion.Text="Klicka på den "+FargerEasy[farg]+"a bilen";
-					Framework.sndPlay.SoundLocation=@"Sounds\Farger\klickaden.wav";
-					Framework.sndPlay.PlaySync();
-					Framework.sndPlay.SoundLocation=@"Sounds\Farger\"+FargerEasy[farg].Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
-					Framework.sndPlay.PlaySync();
-					Framework.sndPlay.SoundLocation=@"Sounds\Farger\bilen.wav";
-					Framework.sndPlay.Play();
-					CheckWin();
+					if(!CheckWin()) {
+						farg = Framework.rndInt(1,5);
+						labelinstruktion.Text="Klicka på den "+FargerEasy[farg]+"a bilen";
+						Framework.sndPlay.SoundLocation=@"Sounds\Colors\klickaden.wav";
+						Framework.sndPlay.PlaySync();
+						Framework.sndPlay.SoundLocation=@"Sounds\Colors\"+FargerEasy[farg].Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
+						Framework.sndPlay.PlaySync();
+						Framework.sndPlay.SoundLocation=@"Sounds\Colors\bilen.wav";
+						Framework.sndPlay.Play();
+					}
 				}
 			}
 		void ClickCarNormal(object sender,EventArgs e) {
@@ -175,8 +176,8 @@ namespace glass.Screens
 				if(farg==Convert.ToInt32(PictureBoxCar.Tag))
 				{
 					prgProgress.PerformStep();
-					SpawnNormal();
-					CheckWin();
+					if(!CheckWin())
+						SpawnNormal();
 				}
 			}
 		void ClickCarHard(object sender,EventArgs e) {
@@ -184,8 +185,9 @@ namespace glass.Screens
 				if(farg==Convert.ToInt32(PictureBoxCar.Tag))
 				{
 					prgProgress.PerformStep();
-					SpawnHard();
-					CheckWin();
+					if(!CheckWin())
+						SpawnHard();
+					
 				}
 			}
 			
@@ -207,11 +209,11 @@ namespace glass.Screens
 				}
 				farg = Framework.rndInt(start+1,start+5);
 				labelinstruktion.Text="Klicka på "+(ObjektNormal[farg]=="huset"?"det ":"den ")+FargerNormal[farg]+"a "+ObjektNormal[farg];
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\klicka"+(ObjektNormal[farg]=="huset"?"det":"den")+".wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\klicka"+(ObjektNormal[farg]=="huset"?"det":"den")+".wav";
 				Framework.sndPlay.PlaySync();
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\"+FargerNormal[farg].Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\"+FargerNormal[farg].Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
 				Framework.sndPlay.PlaySync();
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\"+(ObjektNormal[farg])+".wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\"+(ObjektNormal[farg])+".wav";
 				Framework.sndPlay.Play();
 		}
 		void SpawnHard() {
@@ -232,14 +234,14 @@ namespace glass.Screens
 				}
 				farg = Framework.rndInt(start+1,start+5);
 				labelinstruktion.Text="Klicka på "+(ObjektHard[farg]=="huset"?"det ":"den ")+FargerHard[farg]+"a "+ObjektHard[farg];
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\klicka"+(ObjektHard[farg]=="huset"?"det":"den")+".wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\klicka"+(ObjektHard[farg]=="huset"?"det":"den")+".wav";
 				Framework.sndPlay.PlaySync();
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\"+FargerHard[farg].Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\"+FargerHard[farg].Replace('ä','a').Replace('å','a').Replace('ö','o')+".wav";
 				Framework.sndPlay.PlaySync();
-				Framework.sndPlay.SoundLocation=@"Sounds\Farger\"+(ObjektHard[farg])+".wav";
+				Framework.sndPlay.SoundLocation=@"Sounds\Colors\"+(ObjektHard[farg])+".wav";
 				Framework.sndPlay.Play();
 		}
-		void CheckWin() {
+		bool CheckWin() {
 			if(prgProgress.Value==prgProgress.Maximum) {
 				if((Config.LoggedInUser.score&((int)Framework.LevelScores.Colors<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Colors<<(int)Config.LoggedInUser.difficulty)) {
 		   			Config.LoggedInUser.score+=(uint)Framework.LevelScores.Colors<<(int)Config.LoggedInUser.difficulty;
@@ -247,8 +249,10 @@ namespace glass.Screens
 		   		}
 				Framework.sndPlay.SoundLocation=@"Sounds/bra.wav";
 				Framework.sndPlay.Play();
-				MessageBox.Show(Config.LoggedInUser.score.ToString());
 				this.Close();
+				return(true);
+			}else{
+				return(false);
 			}
 		}
 	}

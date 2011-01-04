@@ -36,13 +36,13 @@ namespace glass.Screens
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.picPrepositions = new System.Windows.Forms.PictureBox();
 			this.picFruits = new System.Windows.Forms.PictureBox();
-			this.PicColors = new System.Windows.Forms.PictureBox();
+			this.picColors = new System.Windows.Forms.PictureBox();
 			this.picClothes = new System.Windows.Forms.PictureBox();
 			this.picBack = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picPrepositions)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picFruits)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.PicColors)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picColors)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picClothes)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
 			this.SuspendLayout();
@@ -54,7 +54,7 @@ namespace glass.Screens
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.Controls.Add(this.picPrepositions, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.picFruits, 1, 0);
-			this.tableLayoutPanel1.Controls.Add(this.PicColors, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.picColors, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.picClothes, 1, 1);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 50);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -67,10 +67,11 @@ namespace glass.Screens
 			// 
 			// picPrepositions
 			// 
+			this.picPrepositions.BackgroundImage = global::glass.Resources.rum_prepositioner;
+			this.picPrepositions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picPrepositions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picPrepositions.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picPrepositions.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.picPrepositions.Image = global::glass.Resources.rum_prepositioner;
 			this.picPrepositions.Location = new System.Drawing.Point(5, 5);
 			this.picPrepositions.Name = "picPrepositions";
 			this.picPrepositions.Size = new System.Drawing.Size(380, 261);
@@ -82,10 +83,11 @@ namespace glass.Screens
 			// picFruits
 			// 
 			this.picFruits.BackColor = System.Drawing.Color.Sienna;
+			this.picFruits.BackgroundImage = global::glass.Resources.rum_frukter;
+			this.picFruits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picFruits.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picFruits.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picFruits.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.picFruits.Image = global::glass.Resources.rum_frukter;
 			this.picFruits.Location = new System.Drawing.Point(391, 5);
 			this.picFruits.Name = "picFruits";
 			this.picFruits.Size = new System.Drawing.Size(380, 261);
@@ -94,24 +96,28 @@ namespace glass.Screens
 			this.picFruits.TabStop = false;
 			this.picFruits.Click += new System.EventHandler(this.PicFruitsClick);
 			// 
-			// PicColors
+			// picColors
 			// 
-			this.PicColors.BackColor = System.Drawing.Color.Transparent;
-			this.PicColors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.PicColors.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.PicColors.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.PicColors.Image = global::glass.Resources.meny_farger;
-			this.PicColors.Location = new System.Drawing.Point(5, 272);
-			this.PicColors.Name = "PicColors";
-			this.PicColors.Size = new System.Drawing.Size(380, 261);
-			this.PicColors.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.PicColors.TabIndex = 2;
-			this.PicColors.TabStop = false;
-			this.PicColors.Click += new System.EventHandler(this.PicColorsClick);
+			this.picColors.BackColor = System.Drawing.Color.Transparent;
+			this.picColors.BackgroundImage = global::glass.Resources.meny_farger;
+			this.picColors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.picColors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.picColors.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.picColors.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picColors.Image = global::glass.Resources.meny_farger;
+			this.picColors.Location = new System.Drawing.Point(5, 272);
+			this.picColors.Name = "picColors";
+			this.picColors.Size = new System.Drawing.Size(380, 261);
+			this.picColors.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picColors.TabIndex = 2;
+			this.picColors.TabStop = false;
+			this.picColors.Click += new System.EventHandler(this.PicColorsClick);
 			// 
 			// picClothes
 			// 
 			this.picClothes.BackColor = System.Drawing.Color.Purple;
+			this.picClothes.BackgroundImage = global::glass.Resources.meny_klader;
+			this.picClothes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picClothes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picClothes.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picClothes.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -151,12 +157,12 @@ namespace glass.Screens
 			this.tableLayoutPanel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.picPrepositions)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picFruits)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.PicColors)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picColors)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picClothes)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.PictureBox PicColors;
+		private System.Windows.Forms.PictureBox picColors;
 		private System.Windows.Forms.PictureBox picFruits;
 		private System.Windows.Forms.PictureBox picClothes;
 		private System.Windows.Forms.PictureBox picPrepositions;

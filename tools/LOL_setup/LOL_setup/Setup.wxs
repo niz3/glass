@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*"
+	    Codepage="1252"
+		Name="LoL - Lek och Lär"
+		Language="1033"
+		Version="1.0.0.0"
+		UpgradeCode="C10DBCE1-95DA-4417-9CF1-04405834D7E1"
+		Manufacturer="Axel Isaksson, Nils Nyberg, Max Alenius, Dylan Samin">
+		<Package Description="Lärorikt spel för barn i dagisåldern"
+			InstallerVersion="200"
+			Compressed="yes"/>
+		<!--
+			Source media for the installation. 
+ 			Specifies a single cab file to be embedded in the installer's .msi. 
+		-->
+		<Media Id="1" Cabinet="contents.cab" EmbedCab="yes" CompressionLevel="high"/>
+		
+		<!-- Installation directory and files are defined in Files.wxs -->
+		<Directory Id="TARGETDIR" Name="SourceDir"/>
+		
+		<Feature Id="Complete"
+		         Title="LoL - Lek och Lär"
+		         Description="Lärorikt spel för barn i dagisåldern"
+		         Level="1">
+		         <ComponentRef Id="LoL"/>
+				<ComponentRef Id="Sounds"/>
+				<ComponentRef Id="ProgramMenuDir"/>
+				<ComponentRef Id="FruitSounds"/>
+				<ComponentRef Id="PrepSounds"/>
+				<ComponentRef Id="ColorSounds"/>
+				<ComponentRef Id="ClothSounds"/>
+		</Feature>
+		
+		<!-- 
+			Using the Wix UI library
+ 
+			WixUI_InstallDir does not allow the user to choose 
+			features but adds a dialog to let the user choose a 
+			directory where the product will be installed
+		-->
+		<Property Id="WIXUI_INSTALLDIR">INSTALLDIR</Property>
+		<UIRef Id="WixUI_InstallDir"/>
+		
+		<Icon Id="icoExe.exe" SourceFile="LoL\LoL.exe" />
+	</Product>
+</Wix>
