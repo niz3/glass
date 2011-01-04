@@ -87,12 +87,11 @@ namespace glass.Screens
 		Point offset;
 		ClothPlaces[] PlaceCollection = new ClothPlaces[]{
 			new ClothPlaces("troja",new Rectangle(268,117, 100,100)),
-			new ClothPlaces("byxor",new Rectangle(275,298, 100,80)),
+			new ClothPlaces("byxor",new Rectangle(278,298, 100,80)),
 			new ClothPlaces("strumpor",new Rectangle(251,436, 200, 60)),
 			new ClothPlaces("mossa",new Rectangle(336,10, 50, 60)),
 		};
-		public GameClothes()
-		{
+		public GameClothes() {
 			InitializeComponent();
 			DrawableItems d=new DrawableItems();
 			d.Parent=drawArea1;
@@ -103,8 +102,7 @@ namespace glass.Screens
 			SpawnClothes();
 		}
 		
-		void PicBackClick(object sender, EventArgs e)
-		{
+		void PicBackClick(object sender, EventArgs e) {
 			Dialog.YesNoDialog AreYouSure =new glass.Dialog.YesNoDialog();
 			AreYouSure.ShowDialog();
 			if(AreYouSure.Answer)
@@ -124,7 +122,13 @@ namespace glass.Screens
 					drawArea1.Invalidate();
 					ActiveClothes++;
 					if(ActiveClothes==Clothes[Config.LoggedInUser.difficulty].Length) {
-						MessageBox.Show("omglol");
+						if((Config.LoggedInUser.score&((int)Framework.LevelScores.Clothes<<(int)Config.LoggedInUser.difficulty))!=((int)Framework.LevelScores.Clothes<<(int)Config.LoggedInUser.difficulty)) {
+					   		Config.LoggedInUser.score+=(uint)Framework.LevelScores.Clothes<<(int)Config.LoggedInUser.difficulty;
+					   		Config.UpdateScore(Config.LoggedInUser);
+					   	}
+						Framework.sndPlay.SoundLocation=@"Sounds\bra.wav";
+						Framework.sndPlay.Play();
+						//MessageBox.Show("omglol");
 						this.Close();
 					}else{
 						goal=PlaceCollection[Clothes[Config.LoggedInUser.difficulty][ActiveClothes]];
@@ -197,7 +201,7 @@ namespace glass.Screens
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=strumpor[l];
 				d.Tag=1;
-				d.Bounds=new Rectangle(600,300,274,38);
+				d.Bounds=new Rectangle(200,510,274,38);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -207,7 +211,7 @@ namespace glass.Screens
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=byxor[l];
 				d.Tag=2;
-				d.Bounds=new Rectangle(600,100,213,178);
+				d.Bounds=new Rectangle(550,100,213,178);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -217,7 +221,7 @@ namespace glass.Screens
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=mossor[l];
 				d.Tag=3;
-				d.Bounds=new Rectangle(600,300,87,60);
+				d.Bounds=new Rectangle(20,300,87,60);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -231,14 +235,13 @@ namespace glass.Screens
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
-			}
-			if(Config.LoggedInUser.difficulty==Difficulty.hard) {
+			}else if(Config.LoggedInUser.difficulty==Difficulty.hard) {
 				DrawableItems d=new DrawableItems();
 				d.Parent=drawArea1;
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=tshirts[l];
 				d.Tag=0;
-				d.Bounds=new Rectangle(0,0,151,180);
+				d.Bounds=new Rectangle(0,0,236,180);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -248,7 +251,7 @@ namespace glass.Screens
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=trojor[l];
 				d.Tag=1;
-				d.Bounds=new Rectangle(600,100,236,185);
+				d.Bounds=new Rectangle(500,50,236,185);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -258,7 +261,7 @@ namespace glass.Screens
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=strumpor[l];
 				d.Tag=2;
-				d.Bounds=new Rectangle(600,300,274,38);
+				d.Bounds=new Rectangle(200,510,274,38);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -268,7 +271,7 @@ namespace glass.Screens
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=byxor[l];
 				d.Tag=3;
-				d.Bounds=new Rectangle(600,300,87,60);
+				d.Bounds=new Rectangle(600,200,213,178);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -278,7 +281,7 @@ namespace glass.Screens
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=mossor[l];
 				d.Tag=4;
-				d.Bounds=new Rectangle(600,300,213,178);
+				d.Bounds=new Rectangle(20,200,87,60);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);
@@ -289,7 +292,7 @@ namespace glass.Screens
 				l=Framework.rndInt(0,trojor.Length);
 				d.Image=jackor[l];
 				d.Tag=5;
-				d.Bounds=new Rectangle(600,300,87,60);
+				d.Bounds=new Rectangle(600,400,237,187);
 				d.MouseDown+= new DrawableItems.ItemMouseEventHandler(ClickMovable);
 				d.MouseMove+=new DrawableItems.ItemMouseEventHandler(MoveMovable);
 				drawArea1.Items.Add(d);

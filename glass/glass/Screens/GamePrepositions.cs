@@ -121,7 +121,7 @@ namespace glass.Screens {
 					   			Config.UpdateScore(Config.LoggedInUser);
 					   		}
 					   		Framework.sndPlay.SoundLocation=@"Sounds\bra.wav";
-							Framework.sndPlay.Play();
+							Framework.sndPlay.PlaySync();
 					   		this.Close();
 					   	}else{
 					   		SpawnItem();

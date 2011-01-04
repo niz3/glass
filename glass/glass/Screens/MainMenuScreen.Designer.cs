@@ -67,10 +67,11 @@ namespace glass.Screens
 			// 
 			// picPrepositions
 			// 
+			this.picPrepositions.BackgroundImage = global::glass.Resources.rum_prepositioner;
+			this.picPrepositions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picPrepositions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picPrepositions.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picPrepositions.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.picPrepositions.Image = global::glass.Resources.rum_prepositioner;
 			this.picPrepositions.Location = new System.Drawing.Point(5, 5);
 			this.picPrepositions.Name = "picPrepositions";
 			this.picPrepositions.Size = new System.Drawing.Size(380, 261);
@@ -82,10 +83,11 @@ namespace glass.Screens
 			// picFruits
 			// 
 			this.picFruits.BackColor = System.Drawing.Color.Sienna;
+			this.picFruits.BackgroundImage = global::glass.Resources.rum_frukter;
+			this.picFruits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picFruits.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picFruits.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picFruits.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.picFruits.Image = global::glass.Resources.rum_frukter;
 			this.picFruits.Location = new System.Drawing.Point(391, 5);
 			this.picFruits.Name = "picFruits";
 			this.picFruits.Size = new System.Drawing.Size(380, 261);
@@ -97,6 +99,8 @@ namespace glass.Screens
 			// PicColors
 			// 
 			this.PicColors.BackColor = System.Drawing.Color.Transparent;
+			this.PicColors.BackgroundImage = global::glass.Resources.meny_farger;
+			this.PicColors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.PicColors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.PicColors.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.PicColors.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -112,6 +116,8 @@ namespace glass.Screens
 			// picClothes
 			// 
 			this.picClothes.BackColor = System.Drawing.Color.Purple;
+			this.picClothes.BackgroundImage = global::glass.Resources.meny_klader;
+			this.picClothes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.picClothes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picClothes.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.picClothes.Dock = System.Windows.Forms.DockStyle.Fill;
