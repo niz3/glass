@@ -12,6 +12,8 @@ namespace glass.Screens {
 	public partial class MainMenuScreen : Form {
 		public MainMenuScreen() {
 			InitializeComponent();
+			Framework.sndPlay.SoundLocation=@"Sounds\starta.wav";
+			Framework.sndPlay.Play();
 		}
 		
 		void PicBackClick(object sender, EventArgs e) {
