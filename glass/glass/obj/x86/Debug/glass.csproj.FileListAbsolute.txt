@@ -86,3 +86,5 @@ D:\Dokument\Projekt\glass\glass\glass\obj\x86\Debug\glass.Screens.GameFarger.res
 D:\Dokument\Projekt\glass\glass\glass\obj\x86\Debug\glass.Screens.GameFruits.resources
 D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.Dialog.WebcamSetup.resources
 D:\Projekt\glass\glass\glass\obj\x86\Debug\glass.Screens.GameClothes.resources
+D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog

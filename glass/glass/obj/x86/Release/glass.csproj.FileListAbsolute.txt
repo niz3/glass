@@ -34,3 +34,5 @@ D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Release\glass.Screens.MainMen
 D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Release\GenerateResource.read.1.tlog
 D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Release\GenerateResource.write.1.tlog
 D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Release\glass.exe
+D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Release\GenerateResource-ResGen.read.1.tlog
+D:\Dokument\Projekt\spel\glass\glass\glass\obj\x86\Release\GenerateResource-ResGen.write.1.tlog
