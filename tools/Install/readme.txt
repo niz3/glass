@@ -9,7 +9,7 @@ Instruktioner:
 1: Stoppa in CD:n i CD-läsaren.
 2: Om installationen inte kommer upp, gå till "Den här datorn" och högerklicka på CD:n och välj utforska.
    Dubbelklicka där på filen "LoL_setup.msi".
-3: ta ut CD:n och starta LoL -Lek och Lär från ikonen på skrivbordet
+3: Följ instruktionerna, ta sedan ut CD:n och starta LoL -Lek och Lär från ikonen på skrivbordet
    eller från Start-menyn.
 4: Första gången du startar spelet måste du välja vilken upplösning som din webbkamera klarar av,
    om du är osäker välj bara okej.
